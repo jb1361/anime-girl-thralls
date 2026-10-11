@@ -41,5 +41,6 @@ of 4600 faces, giving 3816 vertices and 4552 faces.
 
 ## Configuration
 
-- Which thrall types to replace (ghost, skeleton, zombie).
+- A model dropdown for each thrall type (ghost, skeleton, zombie): Original keeps the game's model,
+  otherwise pick a girl. New girls are added as entries in `AnimeGirl.java` pointing at a JSON resource.
 - Model height in game units (a player is roughly 180; default 190).

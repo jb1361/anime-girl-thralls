@@ -53,12 +53,23 @@ public class CustomModelLoaderTest
 	}
 
 	@Test
-	public void bundledModelFitsClientLimits() throws Exception
+	public void bundledModelsFitClientLimits() throws Exception
+	{
+		for (AnimeGirl girl : AnimeGirl.values())
+		{
+			if (girl.getResource() != null)
+			{
+				assertModelFits(girl.getResource());
+			}
+		}
+	}
+
+	private static void assertModelFits(String resource) throws Exception
 	{
 		BlenderModel bm;
-		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream("esdeath.json"))
+		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
 		{
-			assertNotNull(in);
+			assertNotNull(resource, in);
 			bm = new Gson().fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), BlenderModel.class);
 		}
 

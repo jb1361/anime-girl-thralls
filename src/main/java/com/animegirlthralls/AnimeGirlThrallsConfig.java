@@ -11,36 +11,36 @@ public interface AnimeGirlThrallsConfig extends Config
 	String GROUP = "anime-girl-thralls";
 
 	@ConfigItem(
-		keyName = "replaceGhostThralls",
-		name = "Replace ghost thralls",
-		description = "Replace lesser, superior and greater ghost thralls with the custom model",
+		keyName = "ghostModel",
+		name = "Ghost thralls",
+		description = "Model to use for lesser, superior and greater ghost thralls",
 		position = 0
 	)
-	default boolean replaceGhostThralls()
+	default AnimeGirl ghostModel()
 	{
-		return true;
+		return AnimeGirl.ESDEATH;
 	}
 
 	@ConfigItem(
-		keyName = "replaceSkeletonThralls",
-		name = "Replace skeleton thralls",
-		description = "Replace lesser, superior and greater skeleton thralls with the custom model",
+		keyName = "skeletonModel",
+		name = "Skeleton thralls",
+		description = "Model to use for lesser, superior and greater skeleton thralls",
 		position = 1
 	)
-	default boolean replaceSkeletonThralls()
+	default AnimeGirl skeletonModel()
 	{
-		return true;
+		return AnimeGirl.ESDEATH;
 	}
 
 	@ConfigItem(
-		keyName = "replaceZombieThralls",
-		name = "Replace zombie thralls",
-		description = "Replace lesser, superior and greater zombie thralls with the custom model",
+		keyName = "zombieModel",
+		name = "Zombie thralls",
+		description = "Model to use for lesser, superior and greater zombie thralls",
 		position = 2
 	)
-	default boolean replaceZombieThralls()
+	default AnimeGirl zombieModel()
 	{
-		return true;
+		return AnimeGirl.ESDEATH;
 	}
 
 	@Range(min = 50, max = 1000)

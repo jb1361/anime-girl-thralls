@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -45,8 +46,6 @@ import net.runelite.client.plugins.PluginDescriptor;
 )
 public class AnimeGirlThrallsPlugin extends Plugin
 {
-	private static final String MODEL_RESOURCE = "esdeath.json";
-
 	@Inject
 	private Client client;
 
@@ -80,16 +79,17 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	};
 
-	private Future<?> loadFuture;
-	private BlenderModel blenderModel;
-	private Model model;
+	// Parsed model resources and the built models, keyed by girl. Client thread only.
+	private final Map<AnimeGirl, BlenderModel> blenderModels = new EnumMap<>(AnimeGirl.class);
+	private final Map<AnimeGirl, Model> models = new EnumMap<>(AnimeGirl.class);
 	private int modelHeight = -1;
+	private Future<?> loadFuture;
 
 	@Override
 	protected void startUp()
 	{
 		renderCallbackManager.register(renderCallback);
-		loadFuture = executor.submit(this::loadModelResource);
+		loadFuture = executor.submit(this::loadModelResources);
 	}
 
 	@Override
@@ -104,8 +104,8 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		clientThread.invoke(() ->
 		{
 			removeAllReplacements();
-			blenderModel = null;
-			model = null;
+			blenderModels.clear();
+			models.clear();
 			modelHeight = -1;
 		});
 	}
@@ -116,47 +116,61 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		return configManager.getConfig(AnimeGirlThrallsConfig.class);
 	}
 
-	private void loadModelResource()
+	private void loadModelResources()
 	{
-		BlenderModel bm;
-		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(MODEL_RESOURCE))
+		Map<AnimeGirl, BlenderModel> loaded = new EnumMap<>(AnimeGirl.class);
+		for (AnimeGirl girl : AnimeGirl.values())
 		{
-			if (in == null)
+			String resource = girl.getResource();
+			if (resource == null)
 			{
-				log.error("Model resource {} is missing", MODEL_RESOURCE);
-				return;
+				continue;
 			}
-			Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
-			bm = gson.fromJson(reader, BlenderModel.class);
-		}
-		catch (IOException | JsonParseException e)
-		{
-			log.error("Failed to read model resource {}", MODEL_RESOURCE, e);
-			return;
-		}
 
-		if (bm == null)
-		{
-			log.error("Model resource {} is empty", MODEL_RESOURCE);
-			return;
+			BlenderModel bm = loadModelResource(resource);
+			if (bm != null)
+			{
+				loaded.put(girl, bm);
+			}
 		}
 
 		clientThread.invoke(() ->
 		{
-			blenderModel = bm;
-			model = null;
+			blenderModels.clear();
+			blenderModels.putAll(loaded);
+			models.clear();
 			refreshReplacements();
 		});
+	}
+
+	private BlenderModel loadModelResource(String resource)
+	{
+		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
+		{
+			if (in == null)
+			{
+				log.error("Model resource {} is missing", resource);
+				return null;
+			}
+			Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
+			BlenderModel bm = gson.fromJson(reader, BlenderModel.class);
+			if (bm == null)
+			{
+				log.error("Model resource {} is empty", resource);
+			}
+			return bm;
+		}
+		catch (IOException | JsonParseException e)
+		{
+			log.error("Failed to read model resource {}", resource, e);
+			return null;
+		}
 	}
 
 	@Subscribe
 	public void onNpcSpawned(NpcSpawned event)
 	{
-		NPC npc = event.getNpc();
-		if (isTargetNpc(npc))
-		{
-			addReplacement(npc);
-		}
+		addReplacement(event.getNpc());
 	}
 
 	@Subscribe
@@ -169,14 +183,8 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	public void onNpcChanged(NpcChanged event)
 	{
 		NPC npc = event.getNpc();
-		if (!isTargetNpc(npc))
-		{
-			removeReplacement(npc);
-		}
-		else if (!replacements.containsKey(npc))
-		{
-			addReplacement(npc);
-		}
+		removeReplacement(npc);
+		addReplacement(npc);
 	}
 
 	@Subscribe
@@ -217,47 +225,65 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	}
 
-	private boolean isTargetNpc(NPC npc)
+	/**
+	 * Which girl, if any, is configured for this npc.
+	 */
+	private AnimeGirl girlFor(NPC npc)
 	{
 		switch (npc.getId())
 		{
 			case NpcID.ARCEUUS_THRALL_GHOST_LESSER:
 			case NpcID.ARCEUUS_THRALL_GHOST_SUPERIOR:
 			case NpcID.ARCEUUS_THRALL_GHOST_GREATER:
-				return config.replaceGhostThralls();
+				return config.ghostModel();
 			case NpcID.ARCEUUS_THRALL_SKELETON_LESSER:
 			case NpcID.ARCEUUS_THRALL_SKELETON_SUPERIOR:
 			case NpcID.ARCEUUS_THRALL_SKELETON_GREATER:
-				return config.replaceSkeletonThralls();
+				return config.skeletonModel();
 			case NpcID.ARCEUUS_THRALL_ZOMBIE_LESSER:
 			case NpcID.ARCEUUS_THRALL_ZOMBIE_SUPERIOR:
 			case NpcID.ARCEUUS_THRALL_ZOMBIE_GREATER:
-				return config.replaceZombieThralls();
+				return config.zombieModel();
 			default:
-				return false;
+				return AnimeGirl.ORIGINAL;
 		}
 	}
 
 	/**
-	 * Returns the custom model, building it on first use or when the configured height changes.
+	 * Returns the model configured for this npc, building it on first use or when the configured
+	 * height changes. Null when the npc should keep its own model or the model is not available.
 	 * Client thread only.
 	 */
-	private Model getModel()
+	private Model getModel(NPC npc)
 	{
-		if (blenderModel == null)
+		AnimeGirl girl = girlFor(npc);
+		if (girl == null || girl.getResource() == null)
+		{
+			return null;
+		}
+
+		BlenderModel bm = blenderModels.get(girl);
+		if (bm == null)
 		{
 			return null;
 		}
 
 		int height = config.modelHeight();
-		if (model == null || height != modelHeight)
+		if (height != modelHeight)
 		{
-			model = modelLoader.build(blenderModel, height);
+			models.clear();
 			modelHeight = height;
+		}
+
+		Model model = models.get(girl);
+		if (model == null)
+		{
+			model = modelLoader.build(bm, height);
 			if (model != null)
 			{
-				log.debug("Built custom thrall model with {} vertices and {} faces at height {}",
-					model.getVerticesCount(), model.getFaceCount(), height);
+				models.put(girl, model);
+				log.debug("Built {} model with {} vertices and {} faces at height {}",
+					girl, model.getVerticesCount(), model.getFaceCount(), height);
 			}
 		}
 		return model;
@@ -265,13 +291,12 @@ public class AnimeGirlThrallsPlugin extends Plugin
 
 	private void refreshReplacements()
 	{
-		Model m = getModel();
-
 		Iterator<Map.Entry<NPC, RuneLiteObject>> it = replacements.entrySet().iterator();
 		while (it.hasNext())
 		{
 			Map.Entry<NPC, RuneLiteObject> entry = it.next();
-			if (m == null || !isTargetNpc(entry.getKey()))
+			Model m = getModel(entry.getKey());
+			if (m == null)
 			{
 				entry.getValue().setActive(false);
 				it.remove();
@@ -282,11 +307,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 			}
 		}
 
-		if (m == null)
-		{
-			return;
-		}
-
 		WorldView wv = client.getTopLevelWorldView();
 		if (wv == null)
 		{
@@ -294,7 +314,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 		for (NPC npc : wv.npcs())
 		{
-			if (npc != null && isTargetNpc(npc) && !replacements.containsKey(npc))
+			if (npc != null && !replacements.containsKey(npc))
 			{
 				addReplacement(npc);
 			}
@@ -303,7 +323,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 
 	private void addReplacement(NPC npc)
 	{
-		Model m = getModel();
+		Model m = getModel(npc);
 		if (m == null)
 		{
 			return;
