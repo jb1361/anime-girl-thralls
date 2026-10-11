@@ -1,5 +1,6 @@
 package com.animegirlthralls;
 
+import net.runelite.api.gameval.ItemID;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
@@ -56,13 +57,48 @@ public interface AnimeGirlThrallsConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "mimicAnimations",
-		name = "Mimic thrall animations",
-		description = "Deform the custom model to follow the animation of the thrall it replaces",
+		keyName = "animationMode",
+		name = "Animation",
+		description = "Custom: play the girl's own animations, cued by what the thrall is doing.<br>"
+			+ "Mimic thrall: deform the model to follow the thrall's own animation.<br>"
+			+ "None: draw the model in its rest pose.",
 		position = 4
 	)
-	default boolean mimicAnimations()
+	default AnimationMode animationMode()
 	{
-		return true;
+		return AnimationMode.CUSTOM;
+	}
+
+	@ConfigItem(
+		keyName = "magicWeapon",
+		name = "Ghost thrall weapon",
+		description = "Item ID of the staff held by ghost thrall replacements, or -1 for none. Default 1383 (Staff of water).",
+		position = 5
+	)
+	default int magicWeapon()
+	{
+		return ItemID.STAFF_OF_WATER;
+	}
+
+	@ConfigItem(
+		keyName = "rangedWeapon",
+		name = "Skeleton thrall weapon",
+		description = "Item ID of the bow held by skeleton thrall replacements, or -1 for none. Default 861 (Magic shortbow).",
+		position = 6
+	)
+	default int rangedWeapon()
+	{
+		return ItemID.MAGIC_SHORTBOW;
+	}
+
+	@ConfigItem(
+		keyName = "meleeWeapon",
+		name = "Zombie thrall weapon",
+		description = "Item ID of a melee weapon held by zombie thrall replacements, or -1 for bare hands.",
+		position = 7
+	)
+	default int meleeWeapon()
+	{
+		return -1;
 	}
 }

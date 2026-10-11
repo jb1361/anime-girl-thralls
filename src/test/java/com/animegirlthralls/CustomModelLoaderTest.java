@@ -57,14 +57,36 @@ public class CustomModelLoaderTest
 	{
 		for (AnimeGirl girl : AnimeGirl.values())
 		{
-			if (girl.getResource() != null)
+			if (girl.getModelResource() != null)
 			{
-				assertModelFits(girl.getResource());
+				BlenderModel bm = assertModelFits(girl.getModelResource());
+				assertClipsMatch(girl, bm);
+				assertTrue(girl.name(), girl.getBodyFraction() > 0f && girl.getBodyFraction() <= 1f);
 			}
 		}
 	}
 
-	private static void assertModelFits(String resource) throws Exception
+	private static void assertClipsMatch(AnimeGirl girl, BlenderModel bm) throws Exception
+	{
+		for (ClipType type : ClipType.values())
+		{
+			String resource = girl.getClipResource(type);
+			try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
+			{
+				if (in == null)
+				{
+					continue;
+				}
+				VertexClip clip = VertexClip.read(in);
+				assertEquals(resource, bm.getVertices().length, clip.getVertexCount());
+				assertTrue(resource, clip.getFrameCount() > 1);
+				assertEquals(resource, type.isLoop(), clip.isLoop());
+				assertEquals(resource, 2, clip.getAnchorCount());
+			}
+		}
+	}
+
+	private static BlenderModel assertModelFits(String resource) throws Exception
 	{
 		BlenderModel bm;
 		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
@@ -91,5 +113,6 @@ public class CustomModelLoaderTest
 			assertTrue(index >= 0 && index < bm.getFaceColours().length);
 		}
 		assertFits(faces, vertices);
+		return bm;
 	}
 }

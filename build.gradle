@@ -25,6 +25,10 @@ dependencies {
 	testImplementation 'junit:junit:4.12'
 	testImplementation group: 'net.runelite', name:'client', version: runeLiteVersion
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
+	testImplementation(group: 'net.runelite', name:'cache', version: runeLiteVersion) {
+		// only used by the ItemModelDump dev tool; its logger binding clashes with the client's logback
+		exclude group: 'org.slf4j', module: 'slf4j-simple'
+	}
 }
 
 group = 'com.animegirlthralls'

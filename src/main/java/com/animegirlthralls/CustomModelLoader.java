@@ -2,8 +2,11 @@ package com.animegirlthralls;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.JagexColor;
@@ -11,7 +14,7 @@ import net.runelite.api.Model;
 import net.runelite.api.ModelData;
 
 /**
- * Builds a {@link Model} from a {@link BlenderModel}.
+ * Builds a {@link Model} from a {@link BlenderModel}, optionally with a weapon model merged in.
  * <p>
  * The client API has no way to create a {@link ModelData} from scratch, so this follows the approach
  * used by creators-kit: merge copies of tiny cache models until the merged model has exactly the
@@ -27,11 +30,16 @@ class CustomModelLoader
 	/** Models larger than this do not render fully in the client. */
 	static final int MAX_VERTICES = 3900;
 	static final int MAX_FACES = 6200;
+	/** Model height at which weapons are drawn at their in-game size. */
+	static final int REFERENCE_HEIGHT = 190;
 
 	// Cache models used as building blocks. These are the same ids creators-kit uses.
 	private static final int BASIC_MODEL = 823; // one face, three vertices
 	private static final int TRANSPARENT_MODEL = 18871; // carries a face transparency array
 	private static final int PRIORITY_MODEL = 6733; // carries a face render priority array
+
+	// Keeps weapon vertices away from the girl's during the merge so none are de-duplicated
+	private static final int WEAPON_MERGE_OFFSET = 1 << 20;
 
 	// Lighting the client applies to npc models
 	private static final int AMBIENT = 64;
@@ -39,6 +47,21 @@ class CustomModelLoader
 	private static final int LIGHT_X = -30;
 	private static final int LIGHT_Y = -50;
 	private static final int LIGHT_Z = -30;
+
+	/**
+	 * A built model. The girl's vertices come first, followed by the weapon's, if any.
+	 */
+	@Getter
+	@RequiredArgsConstructor
+	static final class BuiltModel
+	{
+		private final Model model;
+		private final int girlVertexCount;
+		private final int weaponVertexCount;
+		/** Weapon vertices in hand space and game units, as {x[], y[], z[]}, or null without a weapon. */
+		@Nullable
+		private final float[][] weaponHandSpace;
+	}
 
 	private final Client client;
 
@@ -49,12 +72,47 @@ class CustomModelLoader
 	}
 
 	/**
+	 * The factor that scales the model's own coordinates so her body is the target height, or 1 to keep
+	 * its size. Animation clips share the model's coordinates, so they are scaled by the same factor.
+	 *
+	 * @param bodyFraction how much of the model's height is her body, in (0, 1]
+	 */
+	static float scaleFor(BlenderModel bm, int targetHeight, float bodyFraction)
+	{
+		int[][] vertices = bm.getVertices();
+		if (targetHeight <= 0 || vertices == null || vertices.length == 0)
+		{
+			return 1f;
+		}
+
+		int minY = Integer.MAX_VALUE;
+		int maxY = Integer.MIN_VALUE;
+		for (int[] v : vertices)
+		{
+			minY = Math.min(minY, v[1]);
+			maxY = Math.max(maxY, v[1]);
+		}
+		int height = maxY - minY;
+		return height > 0 ? targetHeight / (height * bodyFraction) : 1f;
+	}
+
+	/** The factor that scales a weapon's game units for a model of the given height. */
+	static float weaponScaleFor(int targetHeight)
+	{
+		return targetHeight > 0 ? (float) targetHeight / REFERENCE_HEIGHT : 1f;
+	}
+
+	/**
 	 * Builds a lit model. Must be called on the client thread.
 	 *
-	 * @param targetHeight height to scale the model to in local units, or 0 to keep its own size
+	 * @param targetHeight height to scale the body to in local units, or 0 to keep its own size
+	 * @param bodyFraction how much of the model's height is her body, in (0, 1]
+	 * @param weapon       an item model to merge in, or null
+	 * @param weaponKind   how the weapon is gripped; required when weapon is given
 	 * @return the model, or null if it could not be built
 	 */
-	Model build(BlenderModel bm, int targetHeight)
+	@Nullable
+	BuiltModel build(BlenderModel bm, int targetHeight, float bodyFraction, @Nullable ModelData weapon, @Nullable WeaponAlign.Kind weaponKind)
 	{
 		int[][] vertices = bm.getVertices();
 		int[][] faces = bm.getFaces();
@@ -94,22 +152,30 @@ class CustomModelLoader
 			return null;
 		}
 
-		float scale = 1f;
-		if (targetHeight > 0)
+		// Merge the weapon while every vertex position is still unique, so no de-duplication happens
+		int weaponVertices = 0;
+		float[][] weaponHand = null;
+		if (weapon != null && weaponKind != null && weapon.getVerticesCount() > 0)
 		{
-			int minY = Integer.MAX_VALUE;
-			int maxY = Integer.MIN_VALUE;
-			for (int[] v : vertices)
+			int w = weapon.getVerticesCount();
+			ModelData part = weapon.shallowCopy().cloneVertices().translate(WEAPON_MERGE_OFFSET, WEAPON_MERGE_OFFSET, WEAPON_MERGE_OFFSET);
+			ModelData merged = client.mergeModels(md, part);
+			if (merged != null && merged.getVerticesCount() == vertexCount + w
+				&& merged.getFaceCount() == faceCount + weapon.getFaceCount())
 			{
-				minY = Math.min(minY, v[1]);
-				maxY = Math.max(maxY, v[1]);
+				md = merged;
+				weaponVertices = w;
+				weaponHand = WeaponAlign.toHandSpace(weapon.getVerticesX(), weapon.getVerticesY(), weapon.getVerticesZ(), w, weaponKind);
 			}
-			int height = maxY - minY;
-			if (height > 0)
+			else
 			{
-				scale = (float) targetHeight / height;
+				log.warn("Could not merge weapon model with {} vertices and {} faces; drawing without it",
+					w, weapon.getFaceCount());
 			}
 		}
+
+		float scale = scaleFor(bm, targetHeight, bodyFraction);
+		float weaponScale = weaponScaleFor(targetHeight);
 
 		float[] vx = md.getVerticesX();
 		float[] vy = md.getVerticesY();
@@ -120,6 +186,13 @@ class CustomModelLoader
 			vx[i] = v[0] * scale;
 			vy[i] = v[1] * scale;
 			vz[i] = v[2] * scale;
+		}
+		// Weapon vertices are repositioned every draw; give them a sane orientation for lighting
+		for (int i = 0; i < weaponVertices; i++)
+		{
+			vx[vertexCount + i] = weaponHand[0][i] * weaponScale;
+			vy[vertexCount + i] = weaponHand[1][i] * weaponScale;
+			vz[vertexCount + i] = weaponHand[2][i] * weaponScale;
 		}
 
 		int[] f1 = md.getFaceIndices1();
@@ -157,7 +230,7 @@ class CustomModelLoader
 			System.arraycopy(priorities, 0, facePriorities, 0, n);
 		}
 
-		return model;
+		return new BuiltModel(model, vertexCount, weaponVertices, weaponHand);
 	}
 
 	/**

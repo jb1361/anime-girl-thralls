@@ -17,7 +17,8 @@ import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Animation;
 import net.runelite.api.Client;
-import net.runelite.api.Model;
+import net.runelite.api.ItemComposition;
+import net.runelite.api.ModelData;
 import net.runelite.api.NPC;
 import net.runelite.api.Renderable;
 import net.runelite.api.WorldView;
@@ -77,8 +78,8 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	};
 
-	// Parsed model resources keyed by girl, and loaded animations keyed by id. Client thread only.
-	private final Map<AnimeGirl, BlenderModel> blenderModels = new EnumMap<>(AnimeGirl.class);
+	// Loaded resources keyed by girl, and loaded animations keyed by id. Client thread only.
+	private final Map<AnimeGirl, GirlAssets> assets = new EnumMap<>(AnimeGirl.class);
 	private final Map<Integer, Animation> animations = new HashMap<>();
 	private Future<?> loadFuture;
 
@@ -86,7 +87,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	protected void startUp()
 	{
 		renderCallbackManager.register(renderCallback);
-		loadFuture = executor.submit(this::loadModelResources);
+		loadFuture = executor.submit(this::loadAssets);
 	}
 
 	@Override
@@ -101,7 +102,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		clientThread.invoke(() ->
 		{
 			removeAllReplacements();
-			blenderModels.clear();
+			assets.clear();
 			animations.clear();
 		});
 	}
@@ -112,28 +113,47 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		return configManager.getConfig(AnimeGirlThrallsConfig.class);
 	}
 
-	private void loadModelResources()
+	private void loadAssets()
 	{
-		Map<AnimeGirl, BlenderModel> loaded = new EnumMap<>(AnimeGirl.class);
+		Map<AnimeGirl, GirlAssets> loaded = new EnumMap<>(AnimeGirl.class);
 		for (AnimeGirl girl : AnimeGirl.values())
 		{
-			String resource = girl.getResource();
-			if (resource == null)
+			String modelResource = girl.getModelResource();
+			if (modelResource == null)
 			{
 				continue;
 			}
 
-			BlenderModel bm = loadModelResource(resource);
-			if (bm != null)
+			BlenderModel bm = loadModelResource(modelResource);
+			if (bm == null || bm.getVertices() == null)
 			{
-				loaded.put(girl, bm);
+				continue;
 			}
+
+			Map<ClipType, VertexClip> clips = new EnumMap<>(ClipType.class);
+			for (ClipType type : ClipType.values())
+			{
+				VertexClip clip = loadClipResource(girl.getClipResource(type));
+				if (clip == null)
+				{
+					continue;
+				}
+				if (clip.getVertexCount() != bm.getVertices().length)
+				{
+					log.warn("Clip {} for {} has {} vertices but the model has {}; ignoring it",
+						type, girl, clip.getVertexCount(), bm.getVertices().length);
+					continue;
+				}
+				clips.put(type, clip);
+			}
+			loaded.put(girl, new GirlAssets(bm, clips));
+			log.debug("Loaded {} with clips {}", girl, clips.keySet());
 		}
 
 		clientThread.invoke(() ->
 		{
-			blenderModels.clear();
-			blenderModels.putAll(loaded);
+			assets.clear();
+			assets.putAll(loaded);
 			refreshReplacements();
 		});
 	}
@@ -158,6 +178,24 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		catch (IOException | JsonParseException e)
 		{
 			log.error("Failed to read model resource {}", resource, e);
+			return null;
+		}
+	}
+
+	private VertexClip loadClipResource(String resource)
+	{
+		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
+		{
+			if (in == null)
+			{
+				log.debug("No clip resource {}", resource);
+				return null;
+			}
+			return VertexClip.read(in);
+		}
+		catch (IOException | IllegalArgumentException e)
+		{
+			log.error("Failed to read clip resource {}", resource, e);
 			return null;
 		}
 	}
@@ -219,10 +257,10 @@ public class AnimeGirlThrallsPlugin extends Plugin
 			return;
 		}
 
-		boolean mimic = config.mimicAnimations();
+		AnimationMode mode = config.animationMode();
 		for (ThrallReplacement replacement : replacements.values())
 		{
-			replacement.sync(mimic, this::getAnimation);
+			replacement.sync(mode, this::getAnimation);
 		}
 	}
 
@@ -264,34 +302,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	}
 
-	/**
-	 * Builds a fresh model for this npc. Each replacement gets its own model because its vertices
-	 * are deformed in place to follow the npc's animation. Null when the npc should keep its own model
-	 * or the custom model is not available. Client thread only.
-	 */
-	private Model buildModel(NPC npc)
-	{
-		AnimeGirl girl = girlFor(npc);
-		if (girl == null || girl.getResource() == null)
-		{
-			return null;
-		}
-
-		BlenderModel bm = blenderModels.get(girl);
-		if (bm == null)
-		{
-			return null;
-		}
-
-		Model model = modelLoader.build(bm, config.modelHeight());
-		if (model != null)
-		{
-			log.debug("Built {} model with {} vertices and {} faces for npc {}",
-				girl, model.getVerticesCount(), model.getFaceCount(), npc.getId());
-		}
-		return model;
-	}
-
 	private void refreshReplacements()
 	{
 		// Models depend on the configured girl and height, so rebuild everything
@@ -311,18 +321,88 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	}
 
+	/**
+	 * Builds a fresh model for the npc and draws it in the npc's place, if a girl is configured for it
+	 * and her resources are loaded. Each replacement gets its own model. Client thread only.
+	 */
 	private void addReplacement(NPC npc)
 	{
-		Model m = buildModel(npc);
-		if (m == null)
+		AnimeGirl girl = girlFor(npc);
+		if (girl == null || girl.getModelResource() == null)
 		{
 			return;
 		}
 
-		ThrallReplacement replacement = new ThrallReplacement(client, npc, m);
-		replacement.sync(config.mimicAnimations(), this::getAnimation);
+		GirlAssets girlAssets = assets.get(girl);
+		if (girlAssets == null)
+		{
+			return;
+		}
+
+		ThrallKind kind = ThrallKind.forNpc(npc.getId());
+		if (kind == null)
+		{
+			return;
+		}
+
+		int height = config.modelHeight();
+		// Weapons follow the hand anchors stored in the clips, so a girl without clips holds none
+		ModelData weapon = girl.isOwnWeapon() || !girlAssets.hasClips() ? null : loadWeaponModel(kind);
+		CustomModelLoader.BuiltModel built = modelLoader.build(girlAssets.getModel(), height, girl.getBodyFraction(),
+			weapon, kind.getWeaponKind());
+		if (built == null)
+		{
+			return;
+		}
+		log.debug("Built {} model with {} vertices and {} faces for npc {} ({}), weapon vertices {}",
+			girl, built.getModel().getVerticesCount(), built.getModel().getFaceCount(), npc.getId(), kind,
+			built.getWeaponVertexCount());
+
+		float scale = CustomModelLoader.scaleFor(girlAssets.getModel(), height, girl.getBodyFraction());
+		float weaponScale = CustomModelLoader.weaponScaleFor(height);
+		ThrallReplacement replacement = new ThrallReplacement(client, npc, kind, built, girlAssets, scale, weaponScale);
+		replacement.sync(config.animationMode(), this::getAnimation);
 		replacement.activate();
 		replacements.put(npc, replacement);
+	}
+
+	/**
+	 * The inventory model of the weapon configured for this kind of thrall, or null for none or not
+	 * yet loaded. Client thread only.
+	 */
+	private ModelData loadWeaponModel(ThrallKind kind)
+	{
+		int itemId;
+		switch (kind)
+		{
+			case MAGIC:
+				itemId = config.magicWeapon();
+				break;
+			case RANGED:
+				itemId = config.rangedWeapon();
+				break;
+			default:
+				itemId = config.meleeWeapon();
+				break;
+		}
+		if (itemId < 0)
+		{
+			return null;
+		}
+
+		ItemComposition item = client.getItemDefinition(itemId);
+		if (item == null)
+		{
+			log.warn("No item {} for {} thrall weapon", itemId, kind);
+			return null;
+		}
+		int modelId = item.getInventoryModel();
+		ModelData weapon = modelId > 0 ? client.loadModelData(modelId) : null;
+		if (weapon == null)
+		{
+			log.warn("Item {} ({}) has no loadable model {}", itemId, item.getName(), modelId);
+		}
+		return weapon;
 	}
 
 	private void removeReplacement(NPC npc)
