@@ -131,3 +131,20 @@ body (feet to top of head) is 0.747 of the model's height, the body fraction in 
 - Model height in game units (a player is roughly 180; default 210), measured feet to top of head.
 - Animation: Custom (default), Mimic thrall, or None.
 - Weapon item ids for ghost, skeleton and zombie thralls (-1 for none).
+
+## Credits and licensing
+
+The plugin's code is released under the BSD 2-Clause License (see `LICENSE`). The character
+models are not covered by that license. They are fan art of characters owned by their respective
+rights holders, bundled here for free, non-commercial use only. No endorsement by the rights
+holders is implied, and the plugin is not sold or monetised in any way.
+
+- Esdeath from *Akame ga Kill!* © Takahiro, Tetsuya Tashiro / SQUARE ENIX
+  ([Square Enix](https://www.square-enix.com/)); anime by White Fox.
+- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* © Takumi Yanai, AlphaPolis /
+  GATE Production Committee ([AlphaPolis](https://www.alphapolis.co.jp/)); anime by A-1 Pictures.
+
+Rights holders who want a character removed can contact the repository owner directly through
+GitHub, and the content will be taken down promptly. GitHub's own
+[DMCA takedown process](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)
+is also available for anything hosted in this repository.
