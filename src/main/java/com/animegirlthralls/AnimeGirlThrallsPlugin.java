@@ -10,19 +10,17 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.EnumMap;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.api.Animation;
 import net.runelite.api.Client;
 import net.runelite.api.Model;
 import net.runelite.api.NPC;
 import net.runelite.api.Renderable;
-import net.runelite.api.RuneLiteObject;
 import net.runelite.api.WorldView;
-import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.events.BeforeRender;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.NpcChanged;
@@ -67,8 +65,8 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	@Inject
 	private CustomModelLoader modelLoader;
 
-	// Thrall npcs currently hidden, and the object drawn in their place. Client thread only.
-	private final Map<NPC, RuneLiteObject> replacements = new HashMap<>();
+	// Thrall npcs currently hidden, and the replacement drawn in their place. Client thread only.
+	private final Map<NPC, ThrallReplacement> replacements = new HashMap<>();
 	private final RenderCallback renderCallback = new RenderCallback()
 	{
 		@Override
@@ -79,10 +77,9 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 	};
 
-	// Parsed model resources and the built models, keyed by girl. Client thread only.
+	// Parsed model resources keyed by girl, and loaded animations keyed by id. Client thread only.
 	private final Map<AnimeGirl, BlenderModel> blenderModels = new EnumMap<>(AnimeGirl.class);
-	private final Map<AnimeGirl, Model> models = new EnumMap<>(AnimeGirl.class);
-	private int modelHeight = -1;
+	private final Map<Integer, Animation> animations = new HashMap<>();
 	private Future<?> loadFuture;
 
 	@Override
@@ -105,8 +102,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		{
 			removeAllReplacements();
 			blenderModels.clear();
-			models.clear();
-			modelHeight = -1;
+			animations.clear();
 		});
 	}
 
@@ -138,7 +134,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		{
 			blenderModels.clear();
 			blenderModels.putAll(loaded);
-			models.clear();
 			refreshReplacements();
 		});
 	}
@@ -219,10 +214,30 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	@Subscribe
 	public void onBeforeRender(BeforeRender event)
 	{
-		for (Map.Entry<NPC, RuneLiteObject> entry : replacements.entrySet())
+		if (replacements.isEmpty())
 		{
-			syncToNpc(entry.getKey(), entry.getValue());
+			return;
 		}
+
+		boolean mimic = config.mimicAnimations();
+		for (ThrallReplacement replacement : replacements.values())
+		{
+			replacement.sync(mimic, this::getAnimation);
+		}
+	}
+
+	private Animation getAnimation(int id)
+	{
+		Animation animation = animations.get(id);
+		if (animation == null)
+		{
+			animation = client.loadAnimation(id);
+			if (animation != null)
+			{
+				animations.put(id, animation);
+			}
+		}
+		return animation;
 	}
 
 	/**
@@ -250,11 +265,11 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	}
 
 	/**
-	 * Returns the model configured for this npc, building it on first use or when the configured
-	 * height changes. Null when the npc should keep its own model or the model is not available.
-	 * Client thread only.
+	 * Builds a fresh model for this npc. Each replacement gets its own model because its vertices
+	 * are deformed in place to follow the npc's animation. Null when the npc should keep its own model
+	 * or the custom model is not available. Client thread only.
 	 */
-	private Model getModel(NPC npc)
+	private Model buildModel(NPC npc)
 	{
 		AnimeGirl girl = girlFor(npc);
 		if (girl == null || girl.getResource() == null)
@@ -268,44 +283,19 @@ public class AnimeGirlThrallsPlugin extends Plugin
 			return null;
 		}
 
-		int height = config.modelHeight();
-		if (height != modelHeight)
+		Model model = modelLoader.build(bm, config.modelHeight());
+		if (model != null)
 		{
-			models.clear();
-			modelHeight = height;
-		}
-
-		Model model = models.get(girl);
-		if (model == null)
-		{
-			model = modelLoader.build(bm, height);
-			if (model != null)
-			{
-				models.put(girl, model);
-				log.debug("Built {} model with {} vertices and {} faces at height {}",
-					girl, model.getVerticesCount(), model.getFaceCount(), height);
-			}
+			log.debug("Built {} model with {} vertices and {} faces for npc {}",
+				girl, model.getVerticesCount(), model.getFaceCount(), npc.getId());
 		}
 		return model;
 	}
 
 	private void refreshReplacements()
 	{
-		Iterator<Map.Entry<NPC, RuneLiteObject>> it = replacements.entrySet().iterator();
-		while (it.hasNext())
-		{
-			Map.Entry<NPC, RuneLiteObject> entry = it.next();
-			Model m = getModel(entry.getKey());
-			if (m == null)
-			{
-				entry.getValue().setActive(false);
-				it.remove();
-			}
-			else
-			{
-				entry.getValue().setModel(m);
-			}
-		}
+		// Models depend on the configured girl and height, so rebuild everything
+		removeAllReplacements();
 
 		WorldView wv = client.getTopLevelWorldView();
 		if (wv == null)
@@ -314,7 +304,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 		for (NPC npc : wv.npcs())
 		{
-			if (npc != null && !replacements.containsKey(npc))
+			if (npc != null)
 			{
 				addReplacement(npc);
 			}
@@ -323,46 +313,33 @@ public class AnimeGirlThrallsPlugin extends Plugin
 
 	private void addReplacement(NPC npc)
 	{
-		Model m = getModel(npc);
+		Model m = buildModel(npc);
 		if (m == null)
 		{
 			return;
 		}
 
-		RuneLiteObject obj = client.createRuneLiteObject();
-		obj.setModel(m);
-		syncToNpc(npc, obj);
-		obj.setActive(true);
-		replacements.put(npc, obj);
+		ThrallReplacement replacement = new ThrallReplacement(client, npc, m);
+		replacement.sync(config.mimicAnimations(), this::getAnimation);
+		replacement.activate();
+		replacements.put(npc, replacement);
 	}
 
 	private void removeReplacement(NPC npc)
 	{
-		RuneLiteObject obj = replacements.remove(npc);
-		if (obj != null)
+		ThrallReplacement replacement = replacements.remove(npc);
+		if (replacement != null)
 		{
-			obj.setActive(false);
+			replacement.deactivate();
 		}
 	}
 
 	private void removeAllReplacements()
 	{
-		for (RuneLiteObject obj : replacements.values())
+		for (ThrallReplacement replacement : replacements.values())
 		{
-			obj.setActive(false);
+			replacement.deactivate();
 		}
 		replacements.clear();
-	}
-
-	private void syncToNpc(NPC npc, RuneLiteObject obj)
-	{
-		LocalPoint lp = npc.getLocalLocation();
-		WorldView wv = npc.getWorldView();
-		if (lp == null || wv == null)
-		{
-			return;
-		}
-		obj.setLocation(lp, wv.getPlane());
-		obj.setOrientation(npc.getCurrentOrientation());
 	}
 }

@@ -16,6 +16,16 @@ The custom geometry is built using the approach pioneered by
 `Client#mergeModels` until the merged `ModelData` has exactly the right number of vertices and
 faces, and its vertex, face and colour arrays are then overwritten in place.
 
+## Animation
+
+The custom model has no vertex groups, so the client cannot animate it directly. Instead each
+replacement keeps a copy of the thrall's own model, has the client animate that copy every frame with
+the thrall's current animation and frame via `Client#applyTransformations`, and moves each custom
+vertex by the weighted displacement of its nearest thrall vertices (`WrapDeformer`). Models are
+compared in normalised bounding box space and displacements are scaled by the height ratio, so the
+custom model follows the thrall's idle, walk and attack motion approximately. This can be turned off
+in the config.
+
 ## Model format
 
 `src/main/resources/com/animegirlthralls/esdeath.json` is in the creators-kit Blender JSON format,
@@ -44,3 +54,4 @@ of 4600 faces, giving 3816 vertices and 4552 faces.
 - A model dropdown for each thrall type (ghost, skeleton, zombie): Original keeps the game's model,
   otherwise pick a girl. New girls are added as entries in `AnimeGirl.java` pointing at a JSON resource.
 - Model height in game units (a player is roughly 180; default 190).
+- Mimic thrall animations (on by default).

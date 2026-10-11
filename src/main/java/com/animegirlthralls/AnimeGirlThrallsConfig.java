@@ -54,4 +54,15 @@ public interface AnimeGirlThrallsConfig extends Config
 	{
 		return 190;
 	}
+
+	@ConfigItem(
+		keyName = "mimicAnimations",
+		name = "Mimic thrall animations",
+		description = "Deform the custom model to follow the animation of the thrall it replaces",
+		position = 4
+	)
+	default boolean mimicAnimations()
+	{
+		return true;
+	}
 }

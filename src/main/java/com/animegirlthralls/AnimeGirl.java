@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
  */
 @Getter
 @RequiredArgsConstructor
-enum AnimeGirl
+public enum AnimeGirl
 {
 	ORIGINAL(null),
 	ESDEATH("esdeath.json");
