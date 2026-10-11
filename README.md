@@ -125,8 +125,9 @@ body (feet to top of head) is 0.747 of the model's height, the body fraction in 
 ## Configuration
 
 - A model dropdown for each thrall type (ghost, skeleton, zombie): Original keeps the game's model,
-  otherwise pick a girl. New girls are added as entries in `AnimeGirl.java` pointing at a JSON resource,
-  with the fraction of the model's height that is her body.
-- Model height in game units (a player is roughly 180; default 190), measured feet to top of head.
+  otherwise pick a girl (defaults: Esdeath for ghost and skeleton, Rory for zombie). New girls are
+  added as entries in `AnimeGirl.java` pointing at a JSON resource, with the fraction of the model's
+  height that is her body.
+- Model height in game units (a player is roughly 180; default 210), measured feet to top of head.
 - Animation: Custom (default), Mimic thrall, or None.
 - Weapon item ids for ghost, skeleton and zombie thralls (-1 for none).

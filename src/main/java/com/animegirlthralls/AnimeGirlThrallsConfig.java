@@ -41,7 +41,7 @@ public interface AnimeGirlThrallsConfig extends Config
 	)
 	default AnimeGirl zombieModel()
 	{
-		return AnimeGirl.ESDEATH;
+		return AnimeGirl.RORY;
 	}
 
 	@Range(min = 50, max = 1000)
@@ -53,7 +53,7 @@ public interface AnimeGirlThrallsConfig extends Config
 	)
 	default int modelHeight()
 	{
-		return 190;
+		return 210;
 	}
 
 	@ConfigItem(
