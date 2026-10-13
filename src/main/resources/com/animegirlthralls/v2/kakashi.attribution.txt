@@ -1,0 +1,9 @@
+kakashi
+Author: minhdoan (https://sketchfab.com/minhdoan)
+Source: https://sketchfab.com/3d-models/kakashi-b6dfbf39addc4c7089bc5f156e3c1220
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Baked the imported Idle pose to preserve root orientation. Changed the untextured red placeholder material to silver gray for hair and accessories. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+
+Animation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.

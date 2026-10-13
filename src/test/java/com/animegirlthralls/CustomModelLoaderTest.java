@@ -5,10 +5,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import com.google.gson.Gson;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import net.runelite.http.api.RuneLiteAPI;
 import org.junit.Test;
 
 public class CustomModelLoaderTest
@@ -92,14 +91,16 @@ public class CustomModelLoaderTest
 		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
 		{
 			assertNotNull(resource, in);
-			bm = new Gson().fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), BlenderModel.class);
+			bm = new ModelJsonDecoder(RuneLiteAPI.GSON).decode(new String(in.readAllBytes(), StandardCharsets.UTF_8), resource);
 		}
 
 		int vertices = bm.getVertices().length;
 		int faces = bm.getFaces().length;
 		assertTrue("too many vertices: " + vertices, vertices <= CustomModelLoader.MAX_VERTICES);
 		assertTrue("too many faces: " + faces, faces <= CustomModelLoader.MAX_FACES);
-		assertEquals(faces, bm.getFaceColourIndex().length);
+		int[] colourIndices = bm.isUseVertexColours() ? bm.getVertexColourIndex() : bm.getFaceColourIndex();
+		double[][] palette = bm.isUseVertexColours() ? bm.getVertexColours() : bm.getFaceColours();
+		assertEquals(resource, faces * (bm.isUseVertexColours() ? 3 : 1), colourIndices.length);
 		assertEquals(faces, bm.getPriorities().length);
 		for (int[] face : bm.getFaces())
 		{
@@ -108,9 +109,9 @@ public class CustomModelLoaderTest
 				assertTrue(index >= 0 && index < vertices);
 			}
 		}
-		for (int index : bm.getFaceColourIndex())
+		for (int index : colourIndices)
 		{
-			assertTrue(index >= 0 && index < bm.getFaceColours().length);
+			assertTrue(resource, index >= 0 && index < palette.length);
 		}
 		assertFits(faces, vertices);
 		return bm;

@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 class BlenderModel
 {
+	private String geometryEncoding;
 	private boolean useVertexColours;
 	private int[][] vertices;
 	private int[][] faces;

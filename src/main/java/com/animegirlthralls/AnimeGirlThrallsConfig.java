@@ -59,7 +59,7 @@ public interface AnimeGirlThrallsConfig extends Config
 	@ConfigItem(
 		keyName = "animationMode",
 		name = "Animation",
-		description = "Custom: play the girl's own animations, cued by what the thrall is doing.<br>"
+		description = "Custom: play bundled clips when available; other characters keep their standing pose.<br>"
 			+ "Mimic thrall: deform the model to follow the thrall's own animation.<br>"
 			+ "None: draw the model in its rest pose.",
 		position = 4

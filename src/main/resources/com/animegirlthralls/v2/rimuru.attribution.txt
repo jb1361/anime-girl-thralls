@@ -1,0 +1,8 @@
+Rimuru Tempest (Tensei shitara Slime Datta Ken)
+Author: Runne (https://sketchfab.com/r999)
+Source: https://sketchfab.com/3d-models/rimuru-tempest-tensei-shitara-slime-datta-ken-7e738306631945b48254831bd350cb45
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed the inverted black outline shell to expose the blue slime surface. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

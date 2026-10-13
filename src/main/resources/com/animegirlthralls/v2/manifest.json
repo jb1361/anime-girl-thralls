@@ -1,0 +1,1208 @@
+[
+  {
+    "character": "ainz",
+    "resource": "v2/ainz.json",
+    "author": {
+      "username": "affifuddin.y.hidayat",
+      "displayName": "affifuddin.y.hidayat",
+      "profileUrl": "https://sketchfab.com/affifuddin.y.hidayat"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/ainz-ooal-gown-e62df306954144fbb613c6fc3b04e682",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed aura and circle effect planes; retained the character and staff. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "60177f54887217491c3676b8d478b8b8bf87ca57d64817d7973983d9e40b935a"
+  },
+  {
+    "character": "allmight",
+    "resource": "v2/allmight.json",
+    "author": {
+      "username": "am.2536012",
+      "displayName": "GibsArt",
+      "profileUrl": "https://sketchfab.com/am.2536012"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/all-might-low-poly-game-ready-character-7f4acb8b435b498ba14385433998edaf",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Preserved imported root transforms and lowered baked arm geometry for a relaxed standing pose. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "b00506a27f4c53e8f2188693f7079d281ba9258f557566d56318a2d6cdf5a029"
+  },
+  {
+    "character": "aqua",
+    "resource": "v2/aqua.json",
+    "author": {
+      "username": "johnsproject",
+      "displayName": "John's Project",
+      "profileUrl": "https://sketchfab.com/johnsproject"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/low-poly-aqua-konosuba-c60f6f21fefb43a0971addb6cfde2fa0",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "62090552f5940e88bc0d803b0a1ebcc106289c65c5c63a1d08c909b0d8cdbd59"
+  },
+  {
+    "character": "asuka",
+    "resource": "v2/asuka.json",
+    "author": {
+      "username": "rizky08",
+      "displayName": "Craft Tama",
+      "profileUrl": "https://sketchfab.com/rizky08"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/asuka-langley-sohryu-23a9173b5c9946b99f213ec4f9b059e2",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "65f0e7020569c7645954c9bc0759fa4802c30a20416f59ba6c15b19a7cb2167e"
+  },
+  {
+    "character": "charizard",
+    "resource": "v2/charizard.json",
+    "author": {
+      "username": "akennedy007",
+      "displayName": "akennedy007",
+      "profileUrl": "https://sketchfab.com/akennedy007"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/charizard-cbdce28b9cd64c729e5274d8098fbe03",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "8b53d5d34bad654ab55a44017a84485acd2318cb3f1a229db6fa2a464bdd84c0"
+  },
+  {
+    "character": "denji",
+    "resource": "v2/denji.json",
+    "author": {
+      "username": "KenzoDkohno22T",
+      "displayName": "KenzoDkohno22T",
+      "profileUrl": "https://sketchfab.com/KenzoDkohno22T"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/denji-chainsaw-man-yes-rigged-bone-bdd7c53adfc54033b47fb8e3f60545b1",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Preserved imported rig transforms and lowered baked arm geometry. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "e9a19159b82514e47e445c5a422b804b7837f934da0aeb81aecec66540c519e9"
+  },
+  {
+    "character": "edward",
+    "resource": "v2/edward.json",
+    "author": {
+      "username": "JCTourret",
+      "displayName": "JCTourret",
+      "profileUrl": "https://sketchfab.com/JCTourret"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/edward-elric-316ff4a5f7e84e619b11df79714f29d7",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "ce58d772c1e675c7db1318c734cb871d86cfe7afe4e9f3ba6c155a75bdfabc92"
+  },
+  {
+    "character": "escanor",
+    "resource": "v2/escanor.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/escanor-seven-deadly-sins-d27d7bfdb61442edbc575428742cf110",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "d8ce4503c9ba418c90e62b0bc793726e2b3310026a77ffb5f1a0ada5edeadd06"
+  },
+  {
+    "character": "frieren",
+    "resource": "v2/frieren.json",
+    "author": {
+      "username": "KelpieBoye",
+      "displayName": "KelpieBoye",
+      "profileUrl": "https://sketchfab.com/KelpieBoye"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/frieren-lowpoly-sousou-no-frieren-74eaf58ca80141fb9fa4609e062fdec6",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "614f1f789f3240ce4e04f92ccd4ee876b2e44467b8ad0d74568e8f3781e56a37",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 2512,
+        "bytes": 363084,
+        "sha256": "64b75e4112f6748a0b63d390d950b58b0ab26d225df8431a4305965a62ca835e",
+        "maxDisplacement": 45
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 2512,
+        "bytes": 211804,
+        "sha256": "cccec5995f6f7ab0cfddf0ed6bbe45778c13d847d161aad961b24f3d5993cf25",
+        "maxDisplacement": 84
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 2512,
+        "bytes": 181548,
+        "sha256": "9d05c0da3b0c855223c32fb6a800d995b06506a19e74f1787e05fb79f7cb997f",
+        "maxDisplacement": 98
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 2512,
+        "bytes": 257188,
+        "sha256": "7afa7438f9ac33dcc8985935044ecea387a77c4c4a00444dab60569167b095e4",
+        "maxDisplacement": 89
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 2512,
+        "bytes": 242060,
+        "sha256": "38411ca0a6030ccdbcf50e8bfdab0cd744e0369937f39561382437750e9c686e",
+        "maxDisplacement": 114
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "gohan",
+    "resource": "v2/gohan.json",
+    "author": {
+      "username": "keetos349",
+      "displayName": "Kari",
+      "profileUrl": "https://sketchfab.com/keetos349"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/gohan-43d67fb3ffed450ea6f22df8b87b72bb",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "6d910385c7bcaacbb1369a42b032160eb4a4b72dfef0b77063069d4a2bccc99b",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1910,
+        "bytes": 276396,
+        "sha256": "d9b4adeb16a055f1339cc65f1b646ef0a27f88b306b7bc62726f46faf92cb496",
+        "maxDisplacement": 38
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1910,
+        "bytes": 161236,
+        "sha256": "bfab3e42144736d04a7b07b23fe2164efc97db63503b384a34b9190a23b8768c",
+        "maxDisplacement": 85
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1910,
+        "bytes": 138204,
+        "sha256": "63d8a0cde81e836af202dd258011c2b2bff415014feab23bebfe2f23a3020079",
+        "maxDisplacement": 73
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1910,
+        "bytes": 195784,
+        "sha256": "6255f692a9950237ee94e503e3784dba2e52cfff604cdf43fede574e3388525e",
+        "maxDisplacement": 77
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1910,
+        "bytes": 184268,
+        "sha256": "ca06e995ab2aa43d103e4c9f62c46b70163ea9a655488c06b3c7d5fdfa0508e3",
+        "maxDisplacement": 88
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "gojo",
+    "resource": "v2/gojo.json",
+    "author": {
+      "username": "bakhats110",
+      "displayName": "Shah Bakhat026",
+      "profileUrl": "https://sketchfab.com/bakhats110"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/chibi-gojo-290ff733315b44b6bd5c09ef6c998d58",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed the thin display plinth below the shoes. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "c54285553b206e42e199bab05f1b99237d791ae52e07945b961e8a88562ea106"
+  },
+  {
+    "character": "goku",
+    "resource": "v2/goku.json",
+    "author": {
+      "username": "keetos349",
+      "displayName": "Kari",
+      "profileUrl": "https://sketchfab.com/keetos349"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/goku-rigged-animated-3ed060df9f4a4134963e61f3ca95ee7d",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "9ae51dc935cf854dad8b8569fa6705008428d009d5ef3600a2555439f4aadb66",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1793,
+        "bytes": 259548,
+        "sha256": "dd5900bf271d3fe709548c6adca0c538d32a81f7393f05d963ee2bec58080238",
+        "maxDisplacement": 37
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1793,
+        "bytes": 151408,
+        "sha256": "05f1fd178c5beab73ed43b20597eda3b47db851bb3fca7bb2092d3e6544f2a69",
+        "maxDisplacement": 95
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1793,
+        "bytes": 129780,
+        "sha256": "2f4dbee939a53b8cd47fed9e86e237c11c5a7853954970625657ee6974ca5c63",
+        "maxDisplacement": 72
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1793,
+        "bytes": 183850,
+        "sha256": "b4c63888dd1488aa97bec66e501d5eeca493b2985555d3fbd33171160d6ad80f",
+        "maxDisplacement": 78
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1793,
+        "bytes": 173036,
+        "sha256": "7363d70153edfc08876b377a68aec68818c7b65f6504ec895dd37b935ea74ca7",
+        "maxDisplacement": 84
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "gon",
+    "resource": "v2/gon.json",
+    "author": {
+      "username": "s4iy4n_1",
+      "displayName": "NovaS4iy4n",
+      "profileUrl": "https://sketchfab.com/s4iy4n_1"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/gon-freecss-18384549d8554f2d975f654ed03a1fc1",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "c3df99b9dbfce2eb6232f892af0c61347deada659ec4579d6991a83fa304bb10"
+  },
+  {
+    "character": "hisoka",
+    "resource": "v2/hisoka.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/hisoka-hunter-x-hunter-f195e70261b14cc78835682eac2f63f4",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "49e2f546cd65e82ddc8dd72654a89100d8cefdf696a908f581c8bd5e9331ea72",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3473,
+        "bytes": 501468,
+        "sha256": "85d74ba9a85b76e986968e74320126c3d15c1f4bb9fda30dd570d3db1145945c",
+        "maxDisplacement": 22
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3473,
+        "bytes": 292528,
+        "sha256": "28d211a0b3867f066c20cc641f7b123a4f3e9cc45dc01dc143bddcfc0b709326",
+        "maxDisplacement": 51
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3473,
+        "bytes": 250740,
+        "sha256": "2a34b5407c14c3e49a9aea41e7f488d575541801bc8f42513d17c0a94b9d3faf",
+        "maxDisplacement": 54
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3473,
+        "bytes": 355210,
+        "sha256": "af0b2b8ccfaa4caabea3533cc4ff670d3fe2deed535871cf3dc44d91f5376f56",
+        "maxDisplacement": 51
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3473,
+        "bytes": 334316,
+        "sha256": "f67a9aced373343d634220a87af55dcd1bf0fc6bb6a55db1958722337f5be77e",
+        "maxDisplacement": 66
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "ichigo",
+    "resource": "v2/ichigo.json",
+    "author": {
+      "username": "908ec55d3ca64de0917bc495060250",
+      "displayName": "Daniel Pachon",
+      "profileUrl": "https://sketchfab.com/908ec55d3ca64de0917bc495060250"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/ichigo-eb3edf18824b45c38832b5ee75b2fa79",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "897d14e8d3d86c2f134594b8027153923947f53e2b05d7cd9bd2f3c9fd228507"
+  },
+  {
+    "character": "jinwoo",
+    "resource": "v2/jinwoo.json",
+    "author": {
+      "username": "blacksandip530",
+      "displayName": "Anime fan's club",
+      "profileUrl": "https://sketchfab.com/blacksandip530"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/solo-leveling-sung-jin-woo-3d-model-fbx-file-43566534e3b9469d867a056ec13471ba",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "51167f3aea6ee606b7caa2ec77e268fe61b08d66b4194a46e10d3437dda97ad2"
+  },
+  {
+    "character": "kakashi",
+    "resource": "v2/kakashi.json",
+    "author": {
+      "username": "minhdoan",
+      "displayName": "minhdoan",
+      "profileUrl": "https://sketchfab.com/minhdoan"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/kakashi-b6dfbf39addc4c7089bc5f156e3c1220",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Baked the imported Idle pose to preserve root orientation. Changed the untextured red placeholder material to silver gray for hair and accessories. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\n",
+    "sha256": "31b8c6bd1e1aa43a50e342af79c0237dc5b568aa646c8777e5c73b2bdbc4db43",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3235,
+        "bytes": 467196,
+        "sha256": "06a2bd500404377244fe0e3fcee61d6bd9dcd58ea17928b389fe3c8162396eb9",
+        "maxDisplacement": 5
+      },
+      {
+        "clip": "walk",
+        "frames": 12,
+        "vertices": 3235,
+        "bytes": 233604,
+        "sha256": "6a498bbb410fefe43f08c1ae1a62c4bdc2d2ae50bd280f71beb5c1dc48c6aaf9",
+        "maxDisplacement": 42
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 13,
+        "vertices": 3235,
+        "bytes": 253070,
+        "sha256": "c5d1d1c14f7d5fcc264a4bfefe4d174561659f18ee1cecc2ce100b83b5355ce6",
+        "maxDisplacement": 52
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 19,
+        "vertices": 3235,
+        "bytes": 369866,
+        "sha256": "40aad140a743646f4c35e50d857eea42ed9c200f89167d4b31ed4b703e672f0f",
+        "maxDisplacement": 62
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3235,
+        "bytes": 311468,
+        "sha256": "21fad61ef2444f4ca397832f5326e808727ee5272401a7db37f6c8ab6b94b16c",
+        "maxDisplacement": 52
+      }
+    ]
+  },
+  {
+    "character": "kaneki",
+    "resource": "v2/kaneki.json",
+    "author": {
+      "username": "saambell1996",
+      "displayName": "saambell1996",
+      "profileUrl": "https://sketchfab.com/saambell1996"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/ken-kaneki-833a44cb4b7147ac83f050972e4ccfe0",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "7531238dcf6ed6c9a2d6b34dd4f522e1fdc1076d012eb22983d58e879afff095"
+  },
+  {
+    "character": "kurapika",
+    "resource": "v2/kurapika.json",
+    "author": {
+      "username": "s4iy4n_1",
+      "displayName": "NovaS4iy4n",
+      "profileUrl": "https://sketchfab.com/s4iy4n_1"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/kurapika-58f0817e88344967a5277b0cee686dfe",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "a0d5c7463a566d968ea0dbfab13d149b33d2c62681e0a54be865777cf14ee63c"
+  },
+  {
+    "character": "leorio",
+    "resource": "v2/leorio.json",
+    "author": {
+      "username": "s4iy4n_1",
+      "displayName": "NovaS4iy4n",
+      "profileUrl": "https://sketchfab.com/s4iy4n_1"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/leorio-04bbfa5063714aa3878a5a92decbd479",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "9bdcf5ac1fadd08a19f1e2a2a585854c195bae81e5232d5519073a298e2237af"
+  },
+  {
+    "character": "levi",
+    "resource": "v2/levi.json",
+    "author": {
+      "username": "ianadrielbravo",
+      "displayName": "Prime Slayer3D",
+      "profileUrl": "https://sketchfab.com/ianadrielbravo"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/levi-ackerman-rig-01ffa989559941ef807cc07b3fed40b8",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "c5a87a744e78aa6d463e732db82fdee2ae1e35903aa6f657604408b4a2aae638"
+  },
+  {
+    "character": "luffy",
+    "resource": "v2/luffy.json",
+    "author": {
+      "username": "anman",
+      "displayName": "AnmAn",
+      "profileUrl": "https://sketchfab.com/anman"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/luffy-one-piece-995013faf7ce41c2adb39e11916728e4",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "db7cf198b2a87fbf83f38e95978b9af67a692f3b23b835df6c9e59ac5e1e70eb"
+  },
+  {
+    "character": "majin",
+    "resource": "v2/majin.json",
+    "author": {
+      "username": "idv16a.stoll",
+      "displayName": "idv16a.stoll",
+      "profileUrl": "https://sketchfab.com/idv16a.stoll"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/kid-buu-0513a3d6813c4800b973a5adcf1459f3",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "b4baa7c01bd47b061f5a6da717e841cbe213f697dd23103bfb36f9fa9f305607"
+  },
+  {
+    "character": "maki",
+    "resource": "v2/maki.json",
+    "author": {
+      "username": "Scorpion4241",
+      "displayName": "Scorpion4241",
+      "profileUrl": "https://sketchfab.com/Scorpion4241"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/jujutsu-kaisen-maki-zenin-c5c50ae5befa444fae2bb7a1fe83d6d2",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "1fe00c9658bbf9b5096989c9a6892d04ad9354bac8a249addca5dab29dc91206"
+  },
+  {
+    "character": "makima",
+    "resource": "v2/makima.json",
+    "author": {
+      "username": "Scorpion4241",
+      "displayName": "Scorpion4241",
+      "profileUrl": "https://sketchfab.com/Scorpion4241"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/makima-chainsaw-man-c45fe856ba014d6093f0436872732dac",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "c07c343fd6acca610dee3f15928ca7e749871ab0558f7e6b9d412bcd68b45b67"
+  },
+  {
+    "character": "megumi",
+    "resource": "v2/megumi.json",
+    "author": {
+      "username": "Jujutsu_kaisen",
+      "displayName": "Kevin",
+      "profileUrl": "https://sketchfab.com/Jujutsu_kaisen"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/fushiguro-megumi-1586ec566d0240a68ed567a0d1ac076a",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "61dbeb3a0456946b769f5e87ecff7ae9a6b178d9ac21d944782d8fef3b1b59b3"
+  },
+  {
+    "character": "nanami",
+    "resource": "v2/nanami.json",
+    "author": {
+      "username": "hipoojan",
+      "displayName": "hipoojan",
+      "profileUrl": "https://sketchfab.com/hipoojan"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/nanami-jujutsu-kaisen-rigged-sculptrun-da1c5b019e9c420b880de1cfd26b757f",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "fc1d72245b83089daa220938c5cccf077a9dede0c23ae630c76c12768c130dda"
+  },
+  {
+    "character": "naruto",
+    "resource": "v2/naruto.json",
+    "author": {
+      "username": "lopuh22721",
+      "displayName": "3D Resource",
+      "profileUrl": "https://sketchfab.com/lopuh22721"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/naruto-shippuden-naruto-ea2e5dff481243b9973f2bb34a384031",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "dc42ae8c30c5a6791ef3ac6e08662861258061ba4baa286f6f882e5704551fce"
+  },
+  {
+    "character": "power",
+    "resource": "v2/power.json",
+    "author": {
+      "username": "Scorpion4241",
+      "displayName": "Scorpion4241",
+      "profileUrl": "https://sketchfab.com/Scorpion4241"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/power-chainsaw-man-e0a51a616135401da76398d8afe52e3f",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "e0b8231638a83ef8ecd53f94f00535d55c61d33e13c24cfe2b4e50342a7c85ed"
+  },
+  {
+    "character": "rimuru",
+    "resource": "v2/rimuru.json",
+    "author": {
+      "username": "r999",
+      "displayName": "Runne",
+      "profileUrl": "https://sketchfab.com/r999"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/rimuru-tempest-tensei-shitara-slime-datta-ken-7e738306631945b48254831bd350cb45",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed the inverted black outline shell to expose the blue slime surface. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "971e73125b827a9e7e6dbe06f667023c39496d123991347d336d239a1a4bd800"
+  },
+  {
+    "character": "saitama",
+    "resource": "v2/saitama.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/saitama-one-punch-man-6512ce0a70e64ba4b55fdb5d042f1a4e",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "0845e8a51016635e978abfdd47f7874fbacc37510255a6ede30e74f69482f831",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 2576,
+        "bytes": 372300,
+        "sha256": "e6635ecc008b93b1737b7a5766c8d76be63c6909a8076a94c54e5bed48fcb8f9",
+        "maxDisplacement": 25
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 2576,
+        "bytes": 217180,
+        "sha256": "40f8f4d8b9b12d1e64d76e1d34e5957e8f5c122eb92092205978a08a4d8da725",
+        "maxDisplacement": 53
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 2576,
+        "bytes": 186156,
+        "sha256": "c630fdb4741f52f8320c8bae4876de1384774461d9ab372028169bbaa165a588",
+        "maxDisplacement": 55
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 2576,
+        "bytes": 263716,
+        "sha256": "c2be9e93555fc4f4627e8a75849a785387ee41ff74f1bd20c1fb8e51e16b7a85",
+        "maxDisplacement": 58
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 2576,
+        "bytes": 248204,
+        "sha256": "f75162488604915214758dcd7a6259d16dbe82669db2991f834eb920790a2de2",
+        "maxDisplacement": 74
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "sanji",
+    "resource": "v2/sanji.json",
+    "author": {
+      "username": "josef3dartwork",
+      "displayName": "Josef",
+      "profileUrl": "https://sketchfab.com/josef3dartwork"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/sanji-anime-character-0262b397d2a14cf2b14d36e60a950cfd",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "da60bd23f85536e7fff145ea5571e7f9053a12fd119ea343dcbf83121ddeaddc",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3248,
+        "bytes": 469068,
+        "sha256": "d4c7b26110ccd3f6c1c3861e94b74eb45ce436a371afc4a0317b6b392bbb3338",
+        "maxDisplacement": 41
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3248,
+        "bytes": 273628,
+        "sha256": "696cf63c00d49ffcd0e019b56c35c68e331c8f1c138dc0ba39e0f802513013b6",
+        "maxDisplacement": 90
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3248,
+        "bytes": 234540,
+        "sha256": "62c4c211f8355c4aa039a1d55e13d82cd9e18cb80bdfbf56955cc22ba0ed3e39",
+        "maxDisplacement": 89
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3248,
+        "bytes": 332260,
+        "sha256": "0cc4934949b1c2e2832e6340357677e1c24f0d001fe10d76da7d51ec807a5bc4",
+        "maxDisplacement": 83
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3248,
+        "bytes": 312716,
+        "sha256": "d8bc75ab197a79ef047b2f34d0a02070e08772e59e08189a65d54f73484f0c3e",
+        "maxDisplacement": 114
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "sasuke",
+    "resource": "v2/sasuke.json",
+    "author": {
+      "username": "djidol",
+      "displayName": "djidol",
+      "profileUrl": "https://sketchfab.com/djidol"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/naruto-shippuuden-sasuke-3d7f9207d4b94a92b934e83041722e8f",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "00b5b951d010ae942cbfe52d65d4529b6b8b034386808e7eae9185f0a6280799"
+  },
+  {
+    "character": "seiya",
+    "resource": "v2/seiya.json",
+    "author": {
+      "username": "boscopedro",
+      "displayName": "boscopedro",
+      "profileUrl": "https://sketchfab.com/boscopedro"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/pegasus-seiya-f9e701214b414c18b50563f6a1651873",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "beff2f05b8060016204a306230b8a54043ffda6ab8fe47b5adb0fffdafd908dd"
+  },
+  {
+    "character": "shinji",
+    "resource": "v2/shinji.json",
+    "author": {
+      "username": "ohhoni",
+      "displayName": "oni",
+      "profileUrl": "https://sketchfab.com/ohhoni"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/shinji-ikari-965f8891175a4699af04a957fc29582c",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
+    "sha256": "cb7402d7e6e54c618c8ef970c09c314cb7c109c4291140c4d110eca902a5ef30",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3331,
+        "bytes": 481020,
+        "sha256": "569a57f6ea6d2cf19da78f65156cfa9f1fc51481640eed75227216b62d3ad17d",
+        "maxDisplacement": 41
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3331,
+        "bytes": 280600,
+        "sha256": "996f69b14b97d0e144fd9c77e6b6023a5a01f74b58e3105d12e52b21e72acc23",
+        "maxDisplacement": 91
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3331,
+        "bytes": 240516,
+        "sha256": "45b202d1fa9e231ab4ad009d886fd994418197b35228ddddbe800ebd713c378b",
+        "maxDisplacement": 77
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3331,
+        "bytes": 340726,
+        "sha256": "a99f7b3c0d75c42eedc55fbad8f2b57446351249ce6ee7c1deae0e8bdab0f098",
+        "maxDisplacement": 79
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3331,
+        "bytes": 320684,
+        "sha256": "54b3fecd7c232525e12d65cfb0995006a11887618ccbb7e69042833633105b98",
+        "maxDisplacement": 100
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "sukuna",
+    "resource": "v2/sukuna.json",
+    "author": {
+      "username": "Aliza.tiktok",
+      "displayName": "Aliza tiktok",
+      "profileUrl": "https://sketchfab.com/Aliza.tiktok"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/sukuna-940846a909234971a6caca556ad8b490",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Corrected forward-facing orientation. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "6bbe744cb0455966c05ece081a356fed9bc18229b32c2d47299cc7ac274f845a"
+  },
+  {
+    "character": "tatsumaki",
+    "resource": "v2/tatsumaki.json",
+    "author": {
+      "username": "KelpieBoye",
+      "displayName": "KelpieBoye",
+      "profileUrl": "https://sketchfab.com/KelpieBoye"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/lowpoly-tatsumaki-one-punch-man-850b5f85beec4941b3da2ebb729d9914",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\nRemoved the duplicate inverted green outline shell to expose the textured dress.\n",
+    "sha256": "cd1dfe63344a475585f4ca340ece86de01a7e794455f0244090e6a2672c030e5",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1110,
+        "bytes": 161196,
+        "sha256": "caf2fa67a2bf3b1725c317c35cb68c628934de904789111fc019956af57b8ce7",
+        "maxDisplacement": 28
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1110,
+        "bytes": 94036,
+        "sha256": "2ae6cae56d5a4e1905793bf8c4b9fd66c993f15cab41f8d1f043b040ce4ad3b3",
+        "maxDisplacement": 86
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1110,
+        "bytes": 80604,
+        "sha256": "5c61e906993820ffe4b7c94f52feeeada948d1f874fc0a862792cc38b50ccdfc",
+        "maxDisplacement": 59
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1110,
+        "bytes": 114184,
+        "sha256": "1d25003cfa403f17b87e8c5b125802e8348d22d16a674306f79f3b5dc097f754",
+        "maxDisplacement": 61
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1110,
+        "bytes": 107468,
+        "sha256": "27a7084c3e8801bab2296a8c7c5cce56d1ec45b02577321f90294501895729c4",
+        "maxDisplacement": 77
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography"
+  },
+  {
+    "character": "usopp",
+    "resource": "v2/usopp.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/usopp-one-piece-97c2cd70c3814d9c8019b43c29b4efcf",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "81b4a9d5690eb914da6a8c3832d7578bf768f11ccb4b365f8626c383c51e43f6"
+  },
+  {
+    "character": "yugi",
+    "resource": "v2/yugi.json",
+    "author": {
+      "username": "Yugiohfan",
+      "displayName": "Final Fantasy Sonic X",
+      "profileUrl": "https://sketchfab.com/Yugiohfan"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/yugi-muto-a8c6e6061df74d7988491100f120e4f6",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "a39973369ffa86da5be70d5118a90f7e9ae578a4a979c3d1cc856a92d3fd0e59"
+  },
+  {
+    "character": "yusuke",
+    "resource": "v2/yusuke.json",
+    "author": {
+      "username": "s4iy4n_1",
+      "displayName": "NovaS4iy4n",
+      "profileUrl": "https://sketchfab.com/s4iy4n_1"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/yusuke-urameshi-af38d1e2684047869c4099e25f27cc87",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "78281090812ce86a79d1c0fb8bf3a7dbf2d99c582c9ba04f39771276f6e26825"
+  },
+  {
+    "character": "zoro",
+    "resource": "v2/zoro.json",
+    "author": {
+      "username": "anman",
+      "displayName": "AnmAn",
+      "profileUrl": "https://sketchfab.com/anman"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/zoro-one-piece-6f8d89924c134418ae7c16d8d44f210c",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\nBundled in the thrall2 fork as a converted standing model. No animation clips were transferred.\n",
+    "sha256": "04238ed7169145e97b835aae4618b154303d1bb1d3fb117a67eaf987d2d416fe"
+  }
+]

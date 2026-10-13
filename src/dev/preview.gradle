@@ -1,0 +1,17 @@
+// Shared development source set; excluded from the main and shadow JARs.
+sourceSets {
+	dev {
+		java.srcDir 'src/dev/java'
+		compileClasspath += sourceSets.main.output + configurations.testRuntimeClasspath
+		runtimeClasspath += output + compileClasspath
+	}
+}
+
+tasks.register('runPreview', JavaExec) {
+	group = 'application'
+	description = 'Preview bundled thrall models beside your player without summoning thralls'
+	classpath = sourceSets.dev.runtimeClasspath
+	mainClass = 'com.animegirlthralls.ThrallPreviewLauncher'
+	jvmArgs '-ea'
+	args '--developer-mode', '--debug'
+}

@@ -1,0 +1,8 @@
+Denji (Chainsaw-Man) (Yes Rigged bone)
+Author: KenzoDkohno22T (https://sketchfab.com/KenzoDkohno22T)
+Source: https://sketchfab.com/3d-models/denji-chainsaw-man-yes-rigged-bone-bdd7c53adfc54033b47fb8e3f60545b1
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Preserved imported rig transforms and lowered baked arm geometry. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

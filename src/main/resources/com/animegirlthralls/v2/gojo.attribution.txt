@@ -1,0 +1,8 @@
+Chibi Gojo
+Author: Shah Bakhat026 (https://sketchfab.com/bakhats110)
+Source: https://sketchfab.com/3d-models/chibi-gojo-290ff733315b44b6bd5c09ef6c998d58
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed the thin display plinth below the shoes. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

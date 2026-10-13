@@ -1,0 +1,10 @@
+Saitama (One Punch Man)
+Author: D7Xtreme (https://sketchfab.com/D7Xtreme)
+Source: https://sketchfab.com/3d-models/saitama-one-punch-man-6512ce0a70e64ba4b55fdb5d042f1a4e
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+
+Animation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.
+Adapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.

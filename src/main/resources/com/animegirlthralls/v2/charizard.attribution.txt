@@ -1,0 +1,8 @@
+charizard
+Author: akennedy007 (https://sketchfab.com/akennedy007)
+Source: https://sketchfab.com/3d-models/charizard-cbdce28b9cd64c729e5274d8098fbe03
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

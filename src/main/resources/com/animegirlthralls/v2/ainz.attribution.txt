@@ -1,0 +1,8 @@
+Ainz Ooal Gown
+Author: affifuddin.y.hidayat (https://sketchfab.com/affifuddin.y.hidayat)
+Source: https://sketchfab.com/3d-models/ainz-ooal-gown-e62df306954144fbb613c6fc3b04e682
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Removed aura and circle effect planes; retained the character and staff. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

@@ -1,0 +1,8 @@
+Power (Chainsaw Man)
+Author: Scorpion4241 (https://sketchfab.com/Scorpion4241)
+Source: https://sketchfab.com/3d-models/power-chainsaw-man-e0a51a616135401da76398d8afe52e3f
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

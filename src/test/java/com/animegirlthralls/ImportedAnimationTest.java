@@ -1,0 +1,92 @@
+package com.animegirlthralls;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import net.runelite.http.api.RuneLiteAPI;
+import java.util.Arrays;
+import java.util.Collection;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import static org.junit.Assert.*;
+
+@RunWith(Parameterized.class)
+public class ImportedAnimationTest
+{
+	@Parameterized.Parameters(name = "{0}")
+	public static Collection<Object[]> characters()
+	{
+		return Arrays.asList(new Object[][]{
+			{AnimeGirl.FRIEREN}, {AnimeGirl.SAITAMA}, {AnimeGirl.GOHAN},
+			{AnimeGirl.GOKU}, {AnimeGirl.HISOKA}, {AnimeGirl.KAKASHI},
+			{AnimeGirl.SANJI}, {AnimeGirl.SHINJI}, {AnimeGirl.TATSUMAKI}
+		});
+	}
+
+	@Parameterized.Parameter
+	public AnimeGirl character;
+
+	@Test
+	public void importedClipsAnimateMatchingMeshesAndHaveValidHandAnchors() throws Exception
+	{
+		assertFalse("Must allow configured weapons", character.isOwnWeapon());
+		BlenderModel model;
+		try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(character.getModelResource()))
+		{
+			assertNotNull(in);
+			model = new ModelJsonDecoder(RuneLiteAPI.GSON).decode(new String(in.readAllBytes(), StandardCharsets.UTF_8), character.name());
+		}
+		for (ClipType type : ClipType.values())
+		{
+			VertexClip clip;
+			try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(character.getClipResource(type)))
+			{
+				assertNotNull(character + " " + type, in);
+				clip = VertexClip.read(in);
+				assertEquals("Unexpected trailing clip bytes", -1, in.read());
+			}
+			int count = model.getVertices().length;
+			assertEquals(count, clip.getVertexCount());
+			assertEquals(type.isLoop(), clip.isLoop());
+			assertEquals(2, clip.getAnchorCount());
+			float[] x = new float[count], y = new float[count], z = new float[count];
+			float[] first = new float[count];
+			boolean moved = false;
+			for (int f = 0; f < clip.getFrameCount(); f++)
+			{
+				float time = f / (float) clip.getFps();
+				clip.sample(time, 1f, x, y, z);
+				for (int v = 0; v < count; v++)
+				{
+					assertTrue(Float.isFinite(x[v]) && Float.isFinite(y[v]) && Float.isFinite(z[v]));
+					if (f == 0) { first[v] = x[v] + y[v] * 3f + z[v] * 7f; }
+					else if (Math.abs(first[v] - (x[v] + y[v] * 3f + z[v] * 7f)) > 0.5f) { moved = true; }
+				}
+				for (int hand = 0; hand < 2; hand++)
+				{
+					float[] anchor = new float[7];
+					assertTrue(clip.sampleAnchor(hand, time, 1f, anchor));
+					float length = 0;
+					for (int i = 0; i < 7; i++)
+					{
+						assertTrue(Float.isFinite(anchor[i]));
+						if (i >= 3) { length += anchor[i] * anchor[i]; }
+					}
+					assertEquals(1f, length, 0.001f);
+				}
+			}
+			assertTrue(character + " " + type + " has no movement", moved);
+			if (!clip.isLoop())
+			{
+				// An attack must recover to its ready pose, without a positional snap on replay.
+				clip.sample(0f, 1f, x, y, z);
+				float[] startX = x.clone(), startY = y.clone(), startZ = z.clone();
+				clip.sample(clip.getDuration(), 1f, x, y, z);
+				assertArrayEquals(character + " " + type + " recovery X", startX, x, 1f);
+				assertArrayEquals(character + " " + type + " recovery Y", startY, y, 1f);
+				assertArrayEquals(character + " " + type + " recovery Z", startZ, z, 1f);
+			}
+
+		}
+	}
+}

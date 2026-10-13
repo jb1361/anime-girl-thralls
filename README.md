@@ -1,7 +1,12 @@
 # Anime Girl Thralls
 
 A RuneLite plugin that replaces the Arceuus thrall models (ghost, skeleton and zombie, all tiers)
-with a custom anime girl model. Currently ships with Esdeath and Rory Mercury.
+with a custom anime girl model.
+
+Nine imported characters include trial idle, walk, melee, ranged and magic clips for **Custom** mode:
+Frieren, Saitama, Gohan, Goku, Hisoka, Kakashi, Sanji, Shinji and Tatsumaki. Their hand anchors allow
+configured weapons; grip placement still needs in-game review. The other 32 imported models have
+standing geometry: use **None**, or try **Mimic thrall**
 
 ## How it works
 
@@ -23,7 +28,7 @@ baked vertex animation: each clip stores every vertex position per keyframe and 
 interpolates between keyframes at draw time, writing the pose into the client's shared scratch model
 (`Client#applyTransformations` with no animations) so the model's bounds are recomputed each draw.
 
-Each girl has five clips, posed procedurally on her rig in Blender by `tools/export_girl.py` with
+The original two characters have five clips each, posed procedurally on her rig in Blender by `tools/export_girl.py` with
 per-girl poses from `tools/girl_poses.py`. Esdeath's:
 
 - `idle` (3 s loop): breathing, a slow look around, hair sway, forearms forward holding her weapon upright.
@@ -49,12 +54,13 @@ animate it, and moves each custom vertex by the weighted displacement of its nea
 Each thrall kind can hold an item from the game, configured by item id: a staff for ghost thralls
 (default Staff of water), a bow for skeleton thralls (default Magic shortbow) and optionally a melee
 weapon for zombie thralls. The item's inventory model is loaded from the game cache and merged into
-the girl's model when a replacement is built, then moved every draw to follow a hand. Girls modelled
+the girl's model when a replacement is built, then moved every draw to follow a hand. Characters modelled
 with their own weapon (Rory and her halberd) never get the configured item.
 
 Every clip stores a transform for each hand (`VertexClip` anchors): origin in the middle of the fist,
-x along the knuckle row (up when the thumb is up), y from wrist to knuckles, z = x cross y. The
-exporter derives these from the finger bones, so a new girl only needs a humanoid rig with fingers.
+x along the knuckle row (up when the thumb is up), y from wrist to knuckles, z = x cross y. The original
+exporter derives these from finger bones. The imported-rig exporter instead uses approximate
+wrist-local frames, which still require in-game grip review.
 
 Items are aligned into that frame from their shape alone (`WeaponAlign`), so no per-item tuning is
 needed: the long axis from a principal axis fit goes along x, a bow's belly faces +y (string toward

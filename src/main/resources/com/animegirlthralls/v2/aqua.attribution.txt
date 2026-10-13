@@ -1,0 +1,8 @@
+Low Poly Aqua Konosuba
+Author: John's Project (https://sketchfab.com/johnsproject)
+Source: https://sketchfab.com/3d-models/low-poly-aqua-konosuba-c60f6f21fefb43a0971addb6cfde2fa0
+License: http://creativecommons.org/licenses/by/4.0/
+
+Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.
+This model remains under its source CC BY license, separate from the plugin's BSD code.
+Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

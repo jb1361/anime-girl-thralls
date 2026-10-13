@@ -71,3 +71,11 @@ tasks.register('shadowJar', Jar) {
 	archiveClassifier.set('shadow')
 	archiveFileName.set("${rootProject.name}-${project.version}-all.jar")
 }
+
+// Keep source and model notices with both distributable JARs.
+tasks.withType(Jar).configureEach {
+	from(['LICENSE', 'LICENSE-custom-thralls', 'ATTRIBUTIONS.md']) { into 'META-INF' }
+}
+
+// Development preview has its own source set, excluded from distributable JARs.
+apply from: 'src/dev/preview.gradle'
