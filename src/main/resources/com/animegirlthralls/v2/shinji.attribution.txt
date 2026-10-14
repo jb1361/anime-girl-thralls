@@ -6,5 +6,7 @@ License: http://creativecommons.org/licenses/by/4.0/
 Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.
 This model remains under its source CC BY license, separate from the plugin's BSD code.
 
-Animation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.
-Adapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.
+Animation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.
+Adapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.
+Hair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.
+Baked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.

@@ -73,7 +73,7 @@ public class ImportedModelResourcesTest
 			assertNotNull(read(character.getAttributionResource()));
 			selections++;
 		}
-		assertEquals(8, selections);
+		assertEquals(7, selections);
 		assertTrue("Unselectable resources: " + resources, resources.isEmpty());
 	}
 

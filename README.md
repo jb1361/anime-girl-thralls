@@ -3,7 +3,7 @@
 A RuneLite plugin that replaces the Arceuus thrall models (ghost, skeleton and zombie, all tiers)
 with a custom anime girl model.
 
-Eight additional characters are included: Frieren, Gohan, Goku, Hisoka, Saitama, Sanji,
+Seven additional characters are included: Gohan, Goku, Hisoka, Saitama, Sanji,
 Shinji and Tatsumaki. Each has idle, walk, melee, ranged and magic animations adapted
 from Esdeath's choreography, plus hand anchors for the configured weapons.
 Esdeath and Rory keep their original models and animations.
@@ -61,8 +61,8 @@ with their own weapon (Rory and her halberd) never get the configured item.
 
 Every clip stores a transform for each hand (`VertexClip` anchors): origin in the middle of the fist,
 x along the knuckle row (up when the thumb is up), y from wrist to knuckles, z = x cross y. The original
-exporter derives these from finger bones. The imported-rig exporter instead uses approximate
-wrist-local frames, which still require in-game grip review.
+exporter derives these from finger bones. The imported-rig exporter uses mapped palm joints, or the weighted hand surface for fixed fists.
+Supported fingers close around the handle and tighten during melee; grips still require in-game review.
 
 Items are aligned into that frame from their shape alone (`WeaponAlign`), so no per-item tuning is
 needed: the long axis from a principal axis fit goes along x, a bow's belly faces +y (string toward
@@ -147,9 +147,9 @@ models are not covered by that license. They are fan art of characters owned by 
 rights holders, bundled here for free, non-commercial use only. No endorsement by the rights
 holders is implied, and the plugin is not sold or monetised in any way.
 
-- Esdeath from *Akame ga Kill!* Â© Takahiro, Tetsuya Tashiro / SQUARE ENIX
+- Esdeath from *Akame ga Kill!* Ã‚Â© Takahiro, Tetsuya Tashiro / SQUARE ENIX
   ([Square Enix](https://www.square-enix.com/)); anime by White Fox.
-- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* Â© Takumi Yanai, AlphaPolis /
+- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* Ã‚Â© Takumi Yanai, AlphaPolis /
   GATE Production Committee ([AlphaPolis](https://www.alphapolis.co.jp/)); anime by A-1 Pictures.
 
 Rights holders who want a character removed can contact the repository owner directly through
@@ -168,6 +168,6 @@ Jagex accounts: [development login instructions](https://github.com/runelite/run
 Earlier draft builds offered experimental characters that are no longer in the dropdown.
 RuneLite resets an unavailable saved selection to the setting's default. No config keys changed.
 
-The eight imported models retain their individual CC BY licenses, separate from the code
+The seven imported models retain their individual CC BY licenses, separate from the code
 license and the original model notices above. Their creator/source credits and modification
 notes are in `ATTRIBUTIONS.md` and bundled alongside each resource.

@@ -12,7 +12,7 @@ public interface ThrallPreviewConfig extends Config
 
 	@ConfigItem(keyName = "character", name = "Character", position = 0,
 		description = "Bundled model to preview; Original hides the preview")
-	default AnimeGirl character() { return AnimeGirl.FRIEREN; }
+	default AnimeGirl character() { return AnimeGirl.GOHAN; }
 
 	@Range(min = 50, max = 1000)
 	@ConfigItem(keyName = "height", name = "Height", position = 1,

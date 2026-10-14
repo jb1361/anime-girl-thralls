@@ -17,7 +17,6 @@ public enum AnimeGirl
 	ORIGINAL(null, 1f, false),
 	ESDEATH("esdeath", 1f, false),
 	RORY("rory", 0.747f, true),
-	FRIEREN("v2/frieren", 1f, false),
 	GOHAN("v2/gohan", 1f, false),
 	GOKU("v2/goku", 1f, false),
 	HISOKA("v2/hisoka", 1f, false),

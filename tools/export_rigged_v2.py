@@ -18,10 +18,11 @@ from mathutils import Matrix, Quaternion, Vector
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'tools'))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from convert_v2_blender import material_sample, unpack
 from mesh_encoding import encode_mesh
 import retargeted_poses
+from rig_details import RigDetails
 
 parser = argparse.ArgumentParser()
 parser.add_argument('characters', nargs='+')
@@ -132,14 +133,17 @@ def export(base):
         reduction_passes+=1
     low=points.min(axis=0);high=points.max(axis=0);height=high[2]-low[2]
     origin=np.array([(low[0]+high[0])/2,(low[1]+high[1])/2,low[2]])
-    scale=200/height
+    coordinate_height=settings.get("coordinateHeight",200)
+    scale=coordinate_height/height
     def coords(p):
         v=(p-origin)*scale
         return np.rint(np.stack((v[...,0],-v[...,2],v[...,1]),axis=-1)).astype(np.int32)
     base_vertices=coords(points)
     kept=[];palette=[];color_map={};indices=[]
     for index,(face,row) in enumerate(zip(triangles,colors)):
-        p=base_vertices[face]
+        # A tiny finger triangle may round flat at rest and open again when curled.
+        # Filter only truly degenerate source triangles, not quantized rest coordinates.
+        p=points[face]
         if np.all(np.cross(p[1]-p[0],p[2]-p[0])==0) or all(c[3]<.1 for c in row): continue
         kept.append(index)
         for c in row:
@@ -161,7 +165,7 @@ def export(base):
         bone.matrix=rig.matrix_world.inverted() @ Matrix.Translation(head) @ rotation @ Matrix.Translation(-head) @ world
         if loc is not None:
             matrix=rig.matrix_world @ bone.matrix
-            matrix.translation += Vector(loc) / scale
+            matrix.translation += Vector(loc) * (height / 200)
             bone.matrix=rig.matrix_world.inverted() @ matrix
         bpy.context.view_layer.update()
     def apply_retargeted(values):
@@ -183,18 +187,13 @@ def export(base):
     def pose(clip,t,duration):
         for b in rig.pose.bones: b.matrix_basis=resting[b.name].copy()
         bpy.context.view_layer.update()
-        apply_retargeted(retargeted_poses.pose_at(clip,t,duration))
+        values=retargeted_poses.pose_at(clip,t,duration)
+        apply_retargeted(values)
+        details.apply(values,clip,t,duration)
     # Calibrate wrist frames in the ready pose used by the adapted choreography.
     apply_retargeted(retargeted_poses.base_pose())
-    # Use calibrated wrist-local frames where rigs do not have individual finger bones.
-    # These offsets are explicit approximations to be checked with in-game weapons.
-    hand_local=[]
-    for side in ('L','R'):
-        hand=rig.pose.bones[profile['hand'+side]]
-        world=rig.matrix_world @ hand.matrix
-        frame=Matrix(((0,0,1,0),(0,-1,0,0),(1,0,0,0),(0,0,0,1)))
-        frame.translation=world.translation+Vector((0,0,-height*.025))
-        hand_local.append(world.inverted() @ frame)
+    details=RigDetails(rig,profile,settings,objects)
+    hand_local=details.anchors
     # Export the same base rest pose used above, then bake each animation without welding posed vertices.
     collect_colors=False
     out=args.output_root/base;out.mkdir(parents=True,exist_ok=True)
@@ -222,14 +221,20 @@ def export(base):
         report.append(dict(clip=name,frames=count,vertices=len(used),bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),
                            maxDisplacement=int(abs(frames-base_vertices[used]).max())))
     credit=(args.source_root/'assets/v2'/base/'ATTRIBUTION.txt').read_text()
-    credit+='\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\n'
-    if motion == 'esdeath':
-        credit+='Adapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n'
+    credit+='\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\n'
+    detail_notice='Added bounded finger closure and melee tightening on the mapped weighted finger chains.' if settings.get('hands') else 'The source has fixed fists; no finger deformation was added.'
+    credit+='Adapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. '+detail_notice+'\n'
+    if settings.get('hairChains'):
+        credit+='Added lagged local sway on the two mapped hair chains; attacks settle at their endpoints.\n'
+    else:
+        credit+='Hair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\n'
+    if coordinate_height != 200:
+        credit+='Baked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.\n'
     if base == 'tatsumaki':
         credit+='Removed the duplicate inverted green outline shell to expose the textured dress.\n'
     (out/'ATTRIBUTION.txt').write_text(credit)
     (out/'animation-report.json').write_text(json.dumps(dict(character=base,motion=motion,source=source,bones=profile,vertices=len(used),faces=len(faces),clips=report,originalCounts=original_counts,reductionPasses=reduction_passes,ownWeapon=settings.get('ownWeapon',False),
-        handAnchors='Wrist-local approximation; weapon grip requires in-game inspection',review='Pending visual and in-game validation'),indent=2))
+        coordinateHeight=coordinate_height,handAnchors='Palm joints or weighted hand surface; calibrated in ready pose',fingerHands=len(settings.get('hands',{})),hairChains=len(settings.get('hairChains',[])),review='Pending visual and in-game validation'),indent=2))
     print('ANIMATION_RESULT',base,len(used),len(faces),report)
 
 results={}

@@ -1,7 +1,6 @@
 """Esdeath choreography adapted to semantic humanoid joints.
 
-Attack keys remain in girl_poses.py, shared with the original exporter. Finger and
-secondary-motion chains are deliberately omitted until their mappings are reviewed.
+Attack keys remain in girl_poses.py, shared with the original exporter. Reviewed finger and hair chains are applied by rig_details.py.
 Translations are in normalized 200-unit model space, not source-file units.
 """
 import math
@@ -65,14 +64,14 @@ def pose_at(clip, time, duration):
             u = min(1,max(0,(frame-start)/(end-start)))
             u = u*u*(3-2*u)
             for name in set(a) | set(b):
-                if name not in JOINTS and name != '_level':
+                if name not in JOINTS and name not in ('_level', '_curl'):
                     continue
                 values = {}
                 for key in set(a.get(name,{})) | set(b.get(name,{})):
                     zero = (0,0,0) if key == 'loc' else 0
                     va, vb = a.get(name,{}).get(key,zero), b.get(name,{}).get(key,zero)
                     values[key] = tuple(x+(y-x)*u for x,y in zip(va,vb)) if key == 'loc' else va+(vb-va)*u
-                if name == '_level':
+                if name in ('_level', '_curl'):
                     pose[name] = values
                 else:
                     add(pose, JOINTS[name], **values)

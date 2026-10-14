@@ -1,68 +1,5 @@
 [
   {
-    "character": "frieren",
-    "resource": "v2/frieren.json",
-    "author": {
-      "username": "KelpieBoye",
-      "displayName": "KelpieBoye",
-      "profileUrl": "https://sketchfab.com/KelpieBoye"
-    },
-    "sourceUrl": "https://sketchfab.com/3d-models/frieren-lowpoly-sousou-no-frieren-74eaf58ca80141fb9fa4609e062fdec6",
-    "license": {
-      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
-      "label": "CC Attribution",
-      "fullName": "Creative Commons Attribution",
-      "requirements": "Author must be credited. Commercial use is allowed.",
-      "url": "http://creativecommons.org/licenses/by/4.0/",
-      "slug": "by"
-    },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "614f1f789f3240ce4e04f92ccd4ee876b2e44467b8ad0d74568e8f3781e56a37",
-    "animations": [
-      {
-        "clip": "idle",
-        "frames": 24,
-        "vertices": 2512,
-        "bytes": 363084,
-        "sha256": "64b75e4112f6748a0b63d390d950b58b0ab26d225df8431a4305965a62ca835e",
-        "maxDisplacement": 45
-      },
-      {
-        "clip": "walk",
-        "frames": 14,
-        "vertices": 2512,
-        "bytes": 211804,
-        "sha256": "cccec5995f6f7ab0cfddf0ed6bbe45778c13d847d161aad961b24f3d5993cf25",
-        "maxDisplacement": 84
-      },
-      {
-        "clip": "attack_melee",
-        "frames": 12,
-        "vertices": 2512,
-        "bytes": 181548,
-        "sha256": "9d05c0da3b0c855223c32fb6a800d995b06506a19e74f1787e05fb79f7cb997f",
-        "maxDisplacement": 98
-      },
-      {
-        "clip": "attack_ranged",
-        "frames": 17,
-        "vertices": 2512,
-        "bytes": 257188,
-        "sha256": "7afa7438f9ac33dcc8985935044ecea387a77c4c4a00444dab60569167b095e4",
-        "maxDisplacement": 89
-      },
-      {
-        "clip": "attack_magic",
-        "frames": 16,
-        "vertices": 2512,
-        "bytes": 242060,
-        "sha256": "38411ca0a6030ccdbcf50e8bfdab0cd744e0369937f39561382437750e9c686e",
-        "maxDisplacement": 114
-      }
-    ],
-    "animationStyle": "Adapted Esdeath choreography"
-  },
-  {
     "character": "gohan",
     "resource": "v2/gohan.json",
     "author": {
@@ -79,51 +16,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "6d910385c7bcaacbb1369a42b032160eb4a4b72dfef0b77063069d4a2bccc99b",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "506282d412d40c26b90f9fd1f8d97270912a11f762a040dd880c0751ebb789d2",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 1910,
-        "bytes": 276396,
-        "sha256": "d9b4adeb16a055f1339cc65f1b646ef0a27f88b306b7bc62726f46faf92cb496",
-        "maxDisplacement": 38
+        "vertices": 1912,
+        "bytes": 276684,
+        "sha256": "59a6fa6cf7a963dd8a9cd4bb8bd2f66253da6f281c5686b03f1ac086550a1d55",
+        "maxDisplacement": 32
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 1910,
-        "bytes": 161236,
-        "sha256": "bfab3e42144736d04a7b07b23fe2164efc97db63503b384a34b9190a23b8768c",
+        "vertices": 1912,
+        "bytes": 161404,
+        "sha256": "9066fdc2b68c6d50f539bdcbc259e555fa2cdfb23761991e1c71c1f90789bae8",
         "maxDisplacement": 85
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 1910,
-        "bytes": 138204,
-        "sha256": "63d8a0cde81e836af202dd258011c2b2bff415014feab23bebfe2f23a3020079",
-        "maxDisplacement": 73
+        "vertices": 1912,
+        "bytes": 138348,
+        "sha256": "db4c1961c492cbd4533ad7f919751b4b6a8aab588ae9ffc1736083fc7bf1a05a",
+        "maxDisplacement": 65
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 1910,
-        "bytes": 195784,
-        "sha256": "6255f692a9950237ee94e503e3784dba2e52cfff604cdf43fede574e3388525e",
-        "maxDisplacement": 77
+        "vertices": 1912,
+        "bytes": 195988,
+        "sha256": "c4026e0ca3416410e7a0e8bea74d3ce5699a9aace276a1cd173863aa84c60cb9",
+        "maxDisplacement": 71
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 1910,
-        "bytes": 184268,
-        "sha256": "ca06e995ab2aa43d103e4c9f62c46b70163ea9a655488c06b3c7d5fdfa0508e3",
-        "maxDisplacement": 88
+        "vertices": 1912,
+        "bytes": 184460,
+        "sha256": "20cf69ee5f3cd16ecbedf883b306fc40b36367e679c2fdcc43684159d5242d6c",
+        "maxDisplacement": 91
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
   },
   {
     "character": "goku",
@@ -142,51 +81,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "9ae51dc935cf854dad8b8569fa6705008428d009d5ef3600a2555439f4aadb66",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "4e3108e22f559fc098b92696c7f788d560cdd25d05dd9477fcabb423f2356141",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 1793,
-        "bytes": 259548,
-        "sha256": "dd5900bf271d3fe709548c6adca0c538d32a81f7393f05d963ee2bec58080238",
-        "maxDisplacement": 37
+        "vertices": 1800,
+        "bytes": 260556,
+        "sha256": "f784cc165ceed71033f405eb108547c0199f2c6b50fc379d811e3521ff096df8",
+        "maxDisplacement": 31
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 1793,
-        "bytes": 151408,
-        "sha256": "05f1fd178c5beab73ed43b20597eda3b47db851bb3fca7bb2092d3e6544f2a69",
+        "vertices": 1800,
+        "bytes": 151996,
+        "sha256": "e177acee4846c9c0091e6e9eeb47964f16bf19748827c5204f3f71fdb0752ca6",
         "maxDisplacement": 95
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 1793,
-        "bytes": 129780,
-        "sha256": "2f4dbee939a53b8cd47fed9e86e237c11c5a7853954970625657ee6974ca5c63",
-        "maxDisplacement": 72
+        "vertices": 1800,
+        "bytes": 130284,
+        "sha256": "7d9f61f112e2f75a3753a3154f9fd42836090eb2e06c51d83b7ac1bf0ec75cd8",
+        "maxDisplacement": 64
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 1793,
-        "bytes": 183850,
-        "sha256": "b4c63888dd1488aa97bec66e501d5eeca493b2985555d3fbd33171160d6ad80f",
-        "maxDisplacement": 78
+        "vertices": 1800,
+        "bytes": 184564,
+        "sha256": "b777c275f0f111ec5dd77ddbf73c2b041e8c746310f664a4e7348ec8b8e9f001",
+        "maxDisplacement": 73
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 1793,
-        "bytes": 173036,
-        "sha256": "7363d70153edfc08876b377a68aec68818c7b65f6504ec895dd37b935ea74ca7",
-        "maxDisplacement": 84
+        "vertices": 1800,
+        "bytes": 173708,
+        "sha256": "345861f86f5b7bd0e83632a6c180536bf6389b240cfcb4843fa1258e26b6fe4d",
+        "maxDisplacement": 87
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
   },
   {
     "character": "hisoka",
@@ -205,51 +146,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "49e2f546cd65e82ddc8dd72654a89100d8cefdf696a908f581c8bd5e9331ea72",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. The source has fixed fists; no finger deformation was added.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "611da93502637c6a60d81aad550df2be2f7fd5b4dbd62f293b80b51fd0e0854b",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 3473,
-        "bytes": 501468,
-        "sha256": "85d74ba9a85b76e986968e74320126c3d15c1f4bb9fda30dd570d3db1145945c",
+        "vertices": 3586,
+        "bytes": 517740,
+        "sha256": "79e73de5a414889bdc0b6f3052bbe413264b57877a9da75d3a095b6f0715ccb1",
         "maxDisplacement": 22
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 3473,
-        "bytes": 292528,
-        "sha256": "28d211a0b3867f066c20cc641f7b123a4f3e9cc45dc01dc143bddcfc0b709326",
+        "vertices": 3586,
+        "bytes": 302020,
+        "sha256": "47189148f7f7b97d456deb0013536f1c63e017f23148f2c876ce1ba6bf52b9fd",
         "maxDisplacement": 51
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 3473,
-        "bytes": 250740,
-        "sha256": "2a34b5407c14c3e49a9aea41e7f488d575541801bc8f42513d17c0a94b9d3faf",
+        "vertices": 3586,
+        "bytes": 258876,
+        "sha256": "1585bf0af3ca86ccc7ca60aeda7170e85a464023ea83fde700ff842221b74900",
         "maxDisplacement": 54
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 3473,
-        "bytes": 355210,
-        "sha256": "af0b2b8ccfaa4caabea3533cc4ff670d3fe2deed535871cf3dc44d91f5376f56",
+        "vertices": 3586,
+        "bytes": 366736,
+        "sha256": "ceb9f4bcc642eb7985d552cfa75560e188bb1bd3cecbe220f1ef62e06a69cb3a",
         "maxDisplacement": 51
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 3473,
-        "bytes": 334316,
-        "sha256": "f67a9aced373343d634220a87af55dcd1bf0fc6bb6a55db1958722337f5be77e",
+        "vertices": 3586,
+        "bytes": 345164,
+        "sha256": "9de8467da7aa8c2400e2cf98a7f3a4a68ecbe8e1ab8c18fa4bc7d0607290c9ff",
         "maxDisplacement": 66
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": false,
+    "hairAnimation": false
   },
   {
     "character": "saitama",
@@ -268,51 +211,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "0845e8a51016635e978abfdd47f7874fbacc37510255a6ede30e74f69482f831",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. The source has fixed fists; no finger deformation was added.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "2fa47554b9996a4de69a38bfd983d7662c8065f89d65a0cfbd07617327b0142e",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 2576,
-        "bytes": 372300,
-        "sha256": "e6635ecc008b93b1737b7a5766c8d76be63c6909a8076a94c54e5bed48fcb8f9",
+        "vertices": 2666,
+        "bytes": 385260,
+        "sha256": "b0ba40f57f2fc398e44ab52d2d930254308da1616eb567327281934161bae5dd",
         "maxDisplacement": 25
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 2576,
-        "bytes": 217180,
-        "sha256": "40f8f4d8b9b12d1e64d76e1d34e5957e8f5c122eb92092205978a08a4d8da725",
+        "vertices": 2666,
+        "bytes": 224740,
+        "sha256": "756319a6899fa19cefd61e0bb225ab19c2145daeeb5a94c9b8eaa31a15308f9d",
         "maxDisplacement": 53
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 2576,
-        "bytes": 186156,
-        "sha256": "c630fdb4741f52f8320c8bae4876de1384774461d9ab372028169bbaa165a588",
+        "vertices": 2666,
+        "bytes": 192636,
+        "sha256": "e63822277dcfeeb94e813f2607f7aadf000df8178cd0f857aafeb87f5406d3bb",
         "maxDisplacement": 55
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 2576,
-        "bytes": 263716,
-        "sha256": "c2be9e93555fc4f4627e8a75849a785387ee41ff74f1bd20c1fb8e51e16b7a85",
+        "vertices": 2666,
+        "bytes": 272896,
+        "sha256": "587e6df920bb3e88baee034bc0d8ab6d70e0a49d6a5085aeed9c075483f63df9",
         "maxDisplacement": 58
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 2576,
-        "bytes": 248204,
-        "sha256": "f75162488604915214758dcd7a6259d16dbe82669db2991f834eb920790a2de2",
+        "vertices": 2666,
+        "bytes": 256844,
+        "sha256": "3eb6f6f2f585cccf6fd77f3d68483c16214dca1f3bcbad2919365ea2749b9ff0",
         "maxDisplacement": 74
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": false,
+    "hairAnimation": false
   },
   {
     "character": "sanji",
@@ -331,51 +276,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "da60bd23f85536e7fff145ea5571e7f9053a12fd119ea343dcbf83121ddeaddc",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nBaked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.",
+    "sha256": "8acab01669c82a2f1ed1d1e778d117d59492d878051c68bd7e4884230c6b3f23",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 3248,
-        "bytes": 469068,
-        "sha256": "d4c7b26110ccd3f6c1c3861e94b74eb45ce436a371afc4a0317b6b392bbb3338",
-        "maxDisplacement": 41
+        "vertices": 3493,
+        "bytes": 504348,
+        "sha256": "a303b88cca44a8fd3b235e4509bbfdfa679ecbd216ffd3326e59650571de066b",
+        "maxDisplacement": 151
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 3248,
-        "bytes": 273628,
-        "sha256": "696cf63c00d49ffcd0e019b56c35c68e331c8f1c138dc0ba39e0f802513013b6",
-        "maxDisplacement": 90
+        "vertices": 3493,
+        "bytes": 294208,
+        "sha256": "c5c93a99c1e21466023687b8af466392b9e314834bdb3fda1a088543063f1d7d",
+        "maxDisplacement": 358
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 3248,
-        "bytes": 234540,
-        "sha256": "62c4c211f8355c4aa039a1d55e13d82cd9e18cb80bdfbf56955cc22ba0ed3e39",
-        "maxDisplacement": 89
+        "vertices": 3493,
+        "bytes": 252180,
+        "sha256": "c7340af08df6796b220cb448771bce2e46e1a841fd3e21a0b0df9d242fad7270",
+        "maxDisplacement": 331
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 3248,
-        "bytes": 332260,
-        "sha256": "0cc4934949b1c2e2832e6340357677e1c24f0d001fe10d76da7d51ec807a5bc4",
-        "maxDisplacement": 83
+        "vertices": 3493,
+        "bytes": 357250,
+        "sha256": "996c9c4a075e6e9c179821521f4e763ab95e80967e835fe5a839e45fde0fa74a",
+        "maxDisplacement": 307
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 3248,
-        "bytes": 312716,
-        "sha256": "d8bc75ab197a79ef047b2f34d0a02070e08772e59e08189a65d54f73484f0c3e",
-        "maxDisplacement": 114
+        "vertices": 3493,
+        "bytes": 336236,
+        "sha256": "da0efd4bbd5883e631faf47284d16708a435edb7638be9c1e3dfb0b0d5ddaa27",
+        "maxDisplacement": 456
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
   },
   {
     "character": "shinji",
@@ -394,51 +341,53 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\n",
-    "sha256": "cb7402d7e6e54c618c8ef970c09c314cb7c109c4291140c4d110eca902a5ef30",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nBaked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.",
+    "sha256": "83fa6501f61ea59796328d7b5e8b75cebbf8f4e774ddf9f69fede860c478c773",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 3331,
-        "bytes": 481020,
-        "sha256": "569a57f6ea6d2cf19da78f65156cfa9f1fc51481640eed75227216b62d3ad17d",
-        "maxDisplacement": 41
+        "vertices": 3583,
+        "bytes": 517308,
+        "sha256": "e2fb90b7fceaa9ee9010ddbfab4ce39118c5ba6e0faaddd2b5eb2b8e5cbf1370",
+        "maxDisplacement": 144
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 3331,
-        "bytes": 280600,
-        "sha256": "996f69b14b97d0e144fd9c77e6b6023a5a01f74b58e3105d12e52b21e72acc23",
-        "maxDisplacement": 91
+        "vertices": 3583,
+        "bytes": 301768,
+        "sha256": "0ceda5fa894de56a6a4dfa37c2ab73c3e17d3ce9db3524e1433e42cf89f9158d",
+        "maxDisplacement": 361
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 3331,
-        "bytes": 240516,
-        "sha256": "45b202d1fa9e231ab4ad009d886fd994418197b35228ddddbe800ebd713c378b",
-        "maxDisplacement": 77
+        "vertices": 3583,
+        "bytes": 258660,
+        "sha256": "4eea49d6c5c12760d22aaa893a56b78155148bccee5faf2453a315e73b2ef6c6",
+        "maxDisplacement": 286
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 3331,
-        "bytes": 340726,
-        "sha256": "a99f7b3c0d75c42eedc55fbad8f2b57446351249ce6ee7c1deae0e8bdab0f098",
-        "maxDisplacement": 79
+        "vertices": 3583,
+        "bytes": 366430,
+        "sha256": "21a334b83d96f196db1c53ea139e6083c4bc38e75296d1fd33841a96c7eb377b",
+        "maxDisplacement": 293
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 3331,
-        "bytes": 320684,
-        "sha256": "54b3fecd7c232525e12d65cfb0995006a11887618ccbb7e69042833633105b98",
-        "maxDisplacement": 100
+        "vertices": 3583,
+        "bytes": 344876,
+        "sha256": "2a89871336bb84d3107d797471cad73e7daba72fc199a9c7f48b0489a212366d",
+        "maxDisplacement": 411
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
   },
   {
     "character": "tatsumaki",
@@ -457,50 +406,52 @@
       "url": "http://creativecommons.org/licenses/by/4.0/",
       "slug": "by"
     },
-    "changes": "baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and approximate wrist-local hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Finger curls and secondary hair/cloth motion are omitted.\nRemoved the duplicate inverted green outline shell to expose the textured dress.\n",
-    "sha256": "cd1dfe63344a475585f4ca340ece86de01a7e794455f0244090e6a2672c030e5",
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nRemoved the duplicate inverted green outline shell to expose the textured dress.",
+    "sha256": "e23bb022a53a84ce4a7b0a9faaea93e2f83b5bd0887b29a14bf3824cb8231a94",
     "animations": [
       {
         "clip": "idle",
         "frames": 24,
-        "vertices": 1110,
-        "bytes": 161196,
-        "sha256": "caf2fa67a2bf3b1725c317c35cb68c628934de904789111fc019956af57b8ce7",
-        "maxDisplacement": 28
+        "vertices": 1139,
+        "bytes": 165372,
+        "sha256": "5450c476156edaeb45469ee95156a2ea6f15c19b44d334ec123a184785a0f01d",
+        "maxDisplacement": 30
       },
       {
         "clip": "walk",
         "frames": 14,
-        "vertices": 1110,
-        "bytes": 94036,
-        "sha256": "2ae6cae56d5a4e1905793bf8c4b9fd66c993f15cab41f8d1f043b040ce4ad3b3",
+        "vertices": 1139,
+        "bytes": 96472,
+        "sha256": "57735cb21615dfc5ede0d5d5ceddc5dcf564c4a44df6fdfa0d3d367868b76230",
         "maxDisplacement": 86
       },
       {
         "clip": "attack_melee",
         "frames": 12,
-        "vertices": 1110,
-        "bytes": 80604,
-        "sha256": "5c61e906993820ffe4b7c94f52feeeada948d1f874fc0a862792cc38b50ccdfc",
-        "maxDisplacement": 59
+        "vertices": 1139,
+        "bytes": 82692,
+        "sha256": "b573144682173c374ff0ae4c6330239366264133213adfab7f1dd2cc71a7d849",
+        "maxDisplacement": 58
       },
       {
         "clip": "attack_ranged",
         "frames": 17,
-        "vertices": 1110,
-        "bytes": 114184,
-        "sha256": "1d25003cfa403f17b87e8c5b125802e8348d22d16a674306f79f3b5dc097f754",
-        "maxDisplacement": 61
+        "vertices": 1139,
+        "bytes": 117142,
+        "sha256": "06f7b781643f218bf33abb2af5a37fe140ada7595c49c702d094924123de6b91",
+        "maxDisplacement": 63
       },
       {
         "clip": "attack_magic",
         "frames": 16,
-        "vertices": 1110,
-        "bytes": 107468,
-        "sha256": "27a7084c3e8801bab2296a8c7c5cce56d1ec45b02577321f90294501895729c4",
+        "vertices": 1139,
+        "bytes": 110252,
+        "sha256": "fb541287d090b5172d62fc89189e54893ba7bc729c80163aa8b14b4b8c79e434",
         "maxDisplacement": 77
       }
     ],
-    "animationStyle": "Adapted Esdeath choreography"
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
   }
 ]

@@ -72,6 +72,24 @@ public class ImportedAnimationTest
 						if (i >= 3) { length += anchor[i] * anchor[i]; }
 					}
 					assertEquals(1f, length, 0.001f);
+					if (character.getModelResource().startsWith("v2/"))
+					{
+						float nearestSquared = Float.POSITIVE_INFINITY;
+						for (int v = 0; v < count; v++)
+						{
+							float dx = x[v] - anchor[0], dy = y[v] - anchor[1], dz = z[v] - anchor[2];
+							nearestSquared = Math.min(nearestSquared, dx * dx + dy * dy + dz * dz);
+						}
+						int minY = Integer.MAX_VALUE, maxY = Integer.MIN_VALUE;
+						for (int[] vertex : model.getVertices())
+						{
+							minY = Math.min(minY, vertex[1]);
+							maxY = Math.max(maxY, vertex[1]);
+						}
+						// Scale-independent guard against detached handles, including higher-precision meshes.
+						float limit = (maxY - minY) * .03f;
+						assertTrue(character + " " + type + " detached hand anchor", nearestSquared <= limit * limit);
+					}
 				}
 			}
 			assertTrue(character + " " + type + " has no movement", moved);
