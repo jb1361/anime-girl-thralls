@@ -1,8 +1,0 @@
-Kid Buu
-Author: idv16a.stoll (https://sketchfab.com/idv16a.stoll)
-Source: https://sketchfab.com/3d-models/kid-buu-0513a3d6813c4800b973a5adcf1459f3
-License: http://creativecommons.org/licenses/by/4.0/
-
-Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Lowered the baked arm region into a standing pose; source textures sampled into vertex colors. No endorsement implied.
-This model remains under its source CC BY license, separate from the plugin's BSD code.
-Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

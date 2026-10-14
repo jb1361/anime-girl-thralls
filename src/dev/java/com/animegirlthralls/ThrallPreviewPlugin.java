@@ -148,6 +148,10 @@ public class ThrallPreviewPlugin extends Plugin
 					}
 				}
 				GirlAssets loadedAssets = new GirlAssets(loaded, clips);
+				if (!loadedAssets.isComplete())
+				{
+					throw new ModelResourceException("Incomplete animation set for " + resource);
+				}
 				clientThread.invoke(() ->
 				{
 					if (enabled && generation.get() == requestedGeneration)

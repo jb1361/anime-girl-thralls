@@ -39,6 +39,27 @@ public class ImportedModelResourcesTest
 			assertTrue(resource, credits.contains(record.getAsJsonObject("author").get("displayName").getAsString()));
 			assertTrue(resource, credits.contains(record.getAsJsonObject("license").get("url").getAsString()));
 			assertTrue(resource, credits.contains("Modified for"));
+			JsonArray animations = record.getAsJsonArray("animations");
+			assertNotNull("Missing animation manifest: " + resource, animations);
+			Set<String> clipNames = new HashSet<>();
+			for (JsonElement animation : animations)
+			{
+				JsonObject clip = animation.getAsJsonObject();
+				String suffix = clip.get("clip").getAsString();
+				assertTrue("Duplicate clip: " + resource, clipNames.add(suffix));
+				byte[] bytes = read(resource.replace(".json", "_" + suffix + ".bin"));
+				StringBuilder clipHash = new StringBuilder();
+				for (byte b : MessageDigest.getInstance("SHA-256").digest(bytes))
+				{
+					clipHash.append(String.format("%02x", b & 0xff));
+				}
+				assertEquals(resource + " " + suffix, clip.get("sha256").getAsString(), clipHash.toString());
+			}
+			assertEquals(ClipType.values().length, clipNames.size());
+			for (ClipType type : ClipType.values())
+			{
+				assertTrue(resource + " " + type, clipNames.contains(type.getSuffix()));
+			}
 		}
 		int selections = 0;
 		for (AnimeGirl character : AnimeGirl.values())
@@ -52,7 +73,7 @@ public class ImportedModelResourcesTest
 			assertNotNull(read(character.getAttributionResource()));
 			selections++;
 		}
-		assertEquals(41, selections);
+		assertEquals(8, selections);
 		assertTrue("Unselectable resources: " + resources, resources.isEmpty());
 	}
 

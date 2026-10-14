@@ -1,0 +1,179 @@
+{
+  "frieren": {
+    "bones": {
+      "hips": "hips_39",
+      "chest": "chest_35",
+      "head": "head_15",
+      "armL": "upperarm.L_23",
+      "elbowL": "lowerarm.L_19",
+      "handL": "hand.L_18",
+      "armR": "upperarm.R_31",
+      "elbowR": "lowerarm.R_27",
+      "handR": "hand.R_26",
+      "legL": "upperleg.L_2",
+      "kneeL": "lowerleg.L_1",
+      "footL": "foot.L_0",
+      "legR": "upperleg.R_38",
+      "kneeR": "lowerleg.R_37",
+      "footR": "foot.R_36"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "gohan": {
+    "bones": {
+      "hips": "mixamorig:Hips_01",
+      "chest": "mixamorig:Spine2_04",
+      "head": "mixamorig:Head_06",
+      "armL": "mixamorig:LeftArm_09",
+      "elbowL": "mixamorig:LeftForeArm_010",
+      "handL": "mixamorig:LeftHand_011",
+      "armR": "mixamorig:RightArm_033",
+      "elbowR": "mixamorig:RightForeArm_034",
+      "handR": "mixamorig:RightHand_035",
+      "legL": "mixamorig:LeftUpLeg_056",
+      "kneeL": "mixamorig:LeftLeg_057",
+      "footL": "mixamorig:LeftFoot_058",
+      "legR": "mixamorig:RightUpLeg_00",
+      "kneeR": "mixamorig:RightLeg_061",
+      "footR": "mixamorig:RightFoot_062",
+      "spine": "mixamorig:Spine1_03"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "goku": {
+    "bones": {
+      "hips": "mixamorig:Hips_01",
+      "chest": "mixamorig:Spine2_04",
+      "head": "mixamorig:Head_06",
+      "armL": "mixamorig:LeftArm_09",
+      "elbowL": "mixamorig:LeftForeArm_010",
+      "handL": "mixamorig:LeftHand_011",
+      "armR": "mixamorig:RightArm_033",
+      "elbowR": "mixamorig:RightForeArm_034",
+      "handR": "mixamorig:RightHand_035",
+      "legL": "mixamorig:LeftUpLeg_056",
+      "kneeL": "mixamorig:LeftLeg_00",
+      "footL": "mixamorig:LeftFoot_057",
+      "legR": "mixamorig:RightUpLeg_060",
+      "kneeR": "mixamorig:RightLeg_061",
+      "footR": "mixamorig:RightFoot_062",
+      "spine": "mixamorig:Spine1_03"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "hisoka": {
+    "bones": {
+      "hips": "Pelvis_01",
+      "chest": "Spine2_03",
+      "head": "Head_04",
+      "armL": "UpperArm.L_06",
+      "elbowL": "LowerArm.L_07",
+      "handL": "Hand.L_08",
+      "armR": "UpperArm.R_010",
+      "elbowR": "LowerArm.R_011",
+      "handR": "Hand.R_012",
+      "legL": "UpperLeg.L_013",
+      "kneeL": "LowerLeg.L_014",
+      "footL": "Foot.L_015",
+      "legR": "UpperLeg.R_016",
+      "kneeR": "LowerLeg.R_017",
+      "footR": "Foot.R_018",
+      "spine": "Spine1_02"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "saitama": {
+    "bones": {
+      "hips": "Pelvis_01",
+      "chest": "Spine2_03",
+      "head": "Head_04",
+      "armL": "UpperArm.L_06",
+      "elbowL": "LowerArm.L_07",
+      "handL": "Hand.L_08",
+      "armR": "UpperArm.R_010",
+      "elbowR": "LowerArm.R_011",
+      "handR": "Hand.R_012",
+      "legL": "UpperLeg.L_013",
+      "kneeL": "LowerLeg.L_014",
+      "footL": "Foot.L_015",
+      "legR": "UpperLeg.R_016",
+      "kneeR": "LowerLeg.R_017",
+      "footR": "Foot.R_018"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "sanji": {
+    "bones": {
+      "hips": "Bip001 Pelvis_01",
+      "chest": "Bip001 Spine2_012",
+      "head": "Bip001 Head_014",
+      "armL": "Bip001 L UpperArm_016",
+      "elbowL": "Bip001 L Forearm_017",
+      "handL": "Bip001 L Hand_018",
+      "armR": "Bip001 R UpperArm_024",
+      "elbowR": "Bip001 R Forearm_025",
+      "handR": "Bip001 R Hand_026",
+      "legL": "Bip001 L Thigh_02",
+      "kneeL": "Bip001 L Calf_03",
+      "footL": "Bip001 L Foot_04",
+      "legR": "Bip001 R Thigh_06",
+      "kneeR": "Bip001 R Calf_07",
+      "footR": "Bip001 R Foot_08",
+      "spine": "Bip001 Spine1_011"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "shinji": {
+    "bones": {
+      "hips": "mixamorig:Hips_01",
+      "chest": "mixamorig:Spine2_04",
+      "head": "mixamorig:Head_06",
+      "armL": "mixamorig:LeftArm_09",
+      "elbowL": "mixamorig:LeftForeArm_010",
+      "handL": "mixamorig:LeftHand_011",
+      "armR": "mixamorig:RightArm_033",
+      "elbowR": "mixamorig:RightForeArm_034",
+      "handR": "mixamorig:RightHand_035",
+      "legL": "mixamorig:LeftUpLeg_056",
+      "kneeL": "mixamorig:LeftLeg_057",
+      "footL": "mixamorig:LeftFoot_058",
+      "legR": "mixamorig:RightUpLeg_060",
+      "kneeR": "mixamorig:RightLeg_061",
+      "footR": "mixamorig:RightFoot_062",
+      "spine": "mixamorig:Spine1_03"
+    },
+    "ownWeapon": false,
+    "motion": "esdeath"
+  },
+  "tatsumaki": {
+    "bones": {
+      "hips": "spine_60",
+      "chest": "chest_30",
+      "head": "head_0",
+      "armL": "bicep.L_14",
+      "elbowL": "wrist.L_13",
+      "handL": "hand.L_12",
+      "armR": "bicep.R_28",
+      "elbowR": "wrist.R_27",
+      "handR": "hand.R_26",
+      "legL": "thigh.L_34",
+      "kneeL": "shin.L_33",
+      "footL": "foot.L_32",
+      "legR": "thigh.R_53",
+      "kneeR": "shin.R_52",
+      "footR": "foot.R_51",
+      "spine": "tummy_31"
+    },
+    "ownWeapon": false,
+    "exclude": [
+      "^Object_8$"
+    ],
+    "motion": "esdeath"
+  }
+}

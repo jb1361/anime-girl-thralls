@@ -72,10 +72,7 @@ public class CustomModelLoaderTest
 			String resource = girl.getClipResource(type);
 			try (InputStream in = AnimeGirlThrallsPlugin.class.getResourceAsStream(resource))
 			{
-				if (in == null)
-				{
-					continue;
-				}
+				assertNotNull("Missing animation: " + resource, in);
 				VertexClip clip = VertexClip.read(in);
 				assertEquals(resource, bm.getVertices().length, clip.getVertexCount());
 				assertTrue(resource, clip.getFrameCount() > 1);

@@ -3,10 +3,12 @@
 A RuneLite plugin that replaces the Arceuus thrall models (ghost, skeleton and zombie, all tiers)
 with a custom anime girl model.
 
-Nine imported characters include trial idle, walk, melee, ranged and magic clips for **Custom** mode:
-Frieren, Saitama, Gohan, Goku, Hisoka, Kakashi, Sanji, Shinji and Tatsumaki. Their hand anchors allow
-configured weapons; grip placement still needs in-game review. The other 32 imported models have
-standing geometry: use **None**, or try **Mimic thrall**
+Eight additional characters are included: Frieren, Gohan, Goku, Hisoka, Saitama, Sanji,
+Shinji and Tatsumaki. Each has idle, walk, melee, ranged and magic animations adapted
+from Esdeath's choreography, plus hand anchors for the configured weapons.
+Esdeath and Rory keep their original models and animations.
+
+See [model credits](ATTRIBUTIONS.md) and [animation details](ANIMATIONS.md).
 
 ## How it works
 
@@ -145,12 +147,27 @@ models are not covered by that license. They are fan art of characters owned by 
 rights holders, bundled here for free, non-commercial use only. No endorsement by the rights
 holders is implied, and the plugin is not sold or monetised in any way.
 
-- Esdeath from *Akame ga Kill!* © Takahiro, Tetsuya Tashiro / SQUARE ENIX
+- Esdeath from *Akame ga Kill!* Â© Takahiro, Tetsuya Tashiro / SQUARE ENIX
   ([Square Enix](https://www.square-enix.com/)); anime by White Fox.
-- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* © Takumi Yanai, AlphaPolis /
+- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* Â© Takumi Yanai, AlphaPolis /
   GATE Production Committee ([AlphaPolis](https://www.alphapolis.co.jp/)); anime by A-1 Pictures.
 
 Rights holders who want a character removed can contact the repository owner directly through
 GitHub, and the content will be taken down promptly. GitHub's own
 [DMCA takedown process](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)
 is also available for anything hosted in this repository.
+
+## Development preview
+
+Run `./gradlew runPreview`, or select **Thrall Model Preview** in IntelliJ. Log in and
+choose a character and animation to display beside your player without summoning a thrall.
+Height, rotation and repeating attacks help inspect the model. The preview is separate
+from both distributable JARs; weapon grips and NPC transitions need real thrall testing.
+Jagex accounts: [development login instructions](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts).
+
+Earlier draft builds offered experimental characters that are no longer in the dropdown.
+RuneLite resets an unavailable saved selection to the setting's default. No config keys changed.
+
+The eight imported models retain their individual CC BY licenses, separate from the code
+license and the original model notices above. Their creator/source credits and modification
+notes are in `ATTRIBUTIONS.md` and bundled alongside each resource.

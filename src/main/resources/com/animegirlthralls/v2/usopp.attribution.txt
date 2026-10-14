@@ -1,8 +1,0 @@
-Usopp (One Piece)
-Author: D7Xtreme (https://sketchfab.com/D7Xtreme)
-Source: https://sketchfab.com/3d-models/usopp-one-piece-97c2cd70c3814d9c8019b43c29b4efcf
-License: http://creativecommons.org/licenses/by/4.0/
-
-Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.
-This model remains under its source CC BY license, separate from the plugin's BSD code.
-Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

@@ -1,8 +1,0 @@
-All Might Low poly game ready character
-Author: GibsArt (https://sketchfab.com/am.2536012)
-Source: https://sketchfab.com/3d-models/all-might-low-poly-game-ready-character-7f4acb8b435b498ba14385433998edaf
-License: http://creativecommons.org/licenses/by/4.0/
-
-Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Preserved imported root transforms and lowered baked arm geometry for a relaxed standing pose. No endorsement implied.
-This model remains under its source CC BY license, separate from the plugin's BSD code.
-Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

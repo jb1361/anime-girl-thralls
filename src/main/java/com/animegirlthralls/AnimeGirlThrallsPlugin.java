@@ -79,8 +79,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	private final Map<Integer, Animation> animations = new HashMap<>();
 	private Future<?> loadFuture;
 	private volatile int loadGeneration;
-	// Unanimated base models are shared read-only; each replacement owns its pose arrays.
-	private final ModelCache<CustomModelLoader.BuiltModel> staticModels = new ModelCache<>(8);
 
 	@Override
 	protected void startUp()
@@ -109,7 +107,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 			removeAllReplacements();
 			assets.clear();
 			animations.clear();
-			staticModels.clear();
 		});
 	}
 
@@ -156,7 +153,13 @@ public class AnimeGirlThrallsPlugin extends Plugin
 				}
 				clips.put(type, clip);
 			}
-			loaded.put(girl, new GirlAssets(bm, clips));
+			GirlAssets girlAssets = new GirlAssets(bm, clips);
+			if (!girlAssets.isComplete())
+			{
+				log.warn("Skipping {}: missing or incompatible animation set", girl);
+				continue;
+			}
+			loaded.put(girl, girlAssets);
 			log.debug("Loaded {} with clips {}", girl, clips.keySet());
 		}
 
@@ -167,7 +170,6 @@ public class AnimeGirlThrallsPlugin extends Plugin
 				return;
 			}
 			assets.clear();
-			staticModels.clear();
 			assets.putAll(loaded);
 			refreshReplacements();
 		});
@@ -360,12 +362,10 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 
 		int height = config.modelHeight();
-		// Weapons follow the hand anchors stored in the clips, so a girl without clips holds none
-		ModelData weapon = girl.isOwnWeapon() || !girlAssets.hasClips() ? null : loadWeaponModel(kind);
-		CustomModelLoader.BuiltModel built = girlAssets.hasClips()
-			? modelLoader.build(girlAssets.getModel(), height, girl.getBodyFraction(), weapon, kind.getWeaponKind())
-			: staticModels.getOrBuild(girl.getModelResource(), height,
-				() -> modelLoader.build(girlAssets.getModel(), height, girl.getBodyFraction(), null, null));
+		// Every loaded character has a complete set of clips and hand anchors.
+		ModelData weapon = girl.isOwnWeapon() ? null : loadWeaponModel(kind);
+		CustomModelLoader.BuiltModel built = modelLoader.build(girlAssets.getModel(), height,
+			girl.getBodyFraction(), weapon, kind.getWeaponKind());
 		if (built == null)
 		{
 			return;

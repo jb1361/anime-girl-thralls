@@ -1,8 +1,0 @@
-Sukuna
-Author: Aliza tiktok (https://sketchfab.com/Aliza.tiktok)
-Source: https://sketchfab.com/3d-models/sukuna-940846a909234971a6caca556ad8b490
-License: http://creativecommons.org/licenses/by/4.0/
-
-Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. Corrected forward-facing orientation. No endorsement implied.
-This model remains under its source CC BY license, separate from the plugin's BSD code.
-Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

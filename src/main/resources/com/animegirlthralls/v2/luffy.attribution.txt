@@ -1,8 +1,0 @@
-Luffy One Piece
-Author: AnmAn (https://sketchfab.com/anman)
-Source: https://sketchfab.com/3d-models/luffy-one-piece-995013faf7ce41c2adb39e11916728e4
-License: http://creativecommons.org/licenses/by/4.0/
-
-Modified for Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.
-This model remains under its source CC BY license, separate from the plugin's BSD code.
-Bundled in the thrall2 fork as a converted standing model. No animation clips were transferred.

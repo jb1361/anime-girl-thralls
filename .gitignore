@@ -9,5 +9,7 @@ nb-configuration.xml
 nbproject/
 *.class
 
-
 /assets/animation-trial/
+
+# Local preservation of deferred models, clips and research.
+/archives/
