@@ -1,12 +1,8 @@
 package com.animegirlthralls;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
 import com.google.inject.Provides;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -55,7 +51,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	private RenderCallbackManager renderCallbackManager;
 
 	@Inject
-	private Gson gson;
+	private ModelJsonDecoder modelDecoder;
 
 	@Inject
 	private ScheduledExecutorService executor;
@@ -82,17 +78,20 @@ public class AnimeGirlThrallsPlugin extends Plugin
 	private final Map<AnimeGirl, GirlAssets> assets = new EnumMap<>(AnimeGirl.class);
 	private final Map<Integer, Animation> animations = new HashMap<>();
 	private Future<?> loadFuture;
+	private volatile int loadGeneration;
 
 	@Override
 	protected void startUp()
 	{
 		renderCallbackManager.register(renderCallback);
-		loadFuture = executor.submit(this::loadAssets);
+		int generation = ++loadGeneration;
+		loadFuture = executor.submit(() -> loadAssets(generation));
 	}
 
 	@Override
 	protected void shutDown()
 	{
+		int generation = ++loadGeneration;
 		renderCallbackManager.unregister(renderCallback);
 		if (loadFuture != null)
 		{
@@ -101,6 +100,10 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 		clientThread.invoke(() ->
 		{
+			if (generation != loadGeneration)
+			{
+				return;
+			}
 			removeAllReplacements();
 			assets.clear();
 			animations.clear();
@@ -113,11 +116,15 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		return configManager.getConfig(AnimeGirlThrallsConfig.class);
 	}
 
-	private void loadAssets()
+	private void loadAssets(int generation)
 	{
 		Map<AnimeGirl, GirlAssets> loaded = new EnumMap<>(AnimeGirl.class);
 		for (AnimeGirl girl : AnimeGirl.values())
 		{
+			if (Thread.currentThread().isInterrupted() || generation != loadGeneration)
+			{
+				return;
+			}
 			String modelResource = girl.getModelResource();
 			if (modelResource == null)
 			{
@@ -146,12 +153,22 @@ public class AnimeGirlThrallsPlugin extends Plugin
 				}
 				clips.put(type, clip);
 			}
-			loaded.put(girl, new GirlAssets(bm, clips));
+			GirlAssets girlAssets = new GirlAssets(bm, clips);
+			if (!girlAssets.isComplete())
+			{
+				log.warn("Skipping {}: missing or incompatible animation set", girl);
+				continue;
+			}
+			loaded.put(girl, girlAssets);
 			log.debug("Loaded {} with clips {}", girl, clips.keySet());
 		}
 
 		clientThread.invoke(() ->
 		{
+			if (generation != loadGeneration)
+			{
+				return;
+			}
 			assets.clear();
 			assets.putAll(loaded);
 			refreshReplacements();
@@ -167,15 +184,14 @@ public class AnimeGirlThrallsPlugin extends Plugin
 				log.error("Model resource {} is missing", resource);
 				return null;
 			}
-			Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
-			BlenderModel bm = gson.fromJson(reader, BlenderModel.class);
-			if (bm == null)
+			byte[] bytes = in.readNBytes(2 * 1024 * 1024 + 1);
+			if (bytes.length > 2 * 1024 * 1024)
 			{
-				log.error("Model resource {} is empty", resource);
+				throw new ModelResourceException("Model resource exceeds 2 MiB: " + resource);
 			}
-			return bm;
+			return modelDecoder.decode(new String(bytes, StandardCharsets.UTF_8), resource);
 		}
-		catch (IOException | JsonParseException e)
+		catch (IOException | ModelResourceException e)
 		{
 			log.error("Failed to read model resource {}", resource, e);
 			return null;
@@ -304,7 +320,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 
 	private void refreshReplacements()
 	{
-		// Models depend on the configured girl and height, so rebuild everything
+		// Replace live objects; unchanged static appearances reuse the bounded model cache.
 		removeAllReplacements();
 
 		WorldView wv = client.getTopLevelWorldView();
@@ -323,7 +339,7 @@ public class AnimeGirlThrallsPlugin extends Plugin
 
 	/**
 	 * Builds a fresh model for the npc and draws it in the npc's place, if a girl is configured for it
-	 * and her resources are loaded. Each replacement gets its own model. Client thread only.
+	 * and her resources are loaded. Static base geometry is shared read-only. Client thread only.
 	 */
 	private void addReplacement(NPC npc)
 	{
@@ -346,10 +362,10 @@ public class AnimeGirlThrallsPlugin extends Plugin
 		}
 
 		int height = config.modelHeight();
-		// Weapons follow the hand anchors stored in the clips, so a girl without clips holds none
-		ModelData weapon = girl.isOwnWeapon() || !girlAssets.hasClips() ? null : loadWeaponModel(kind);
-		CustomModelLoader.BuiltModel built = modelLoader.build(girlAssets.getModel(), height, girl.getBodyFraction(),
-			weapon, kind.getWeaponKind());
+		// Every loaded character has a complete set of clips and hand anchors.
+		ModelData weapon = girl.isOwnWeapon() ? null : loadWeaponModel(kind);
+		CustomModelLoader.BuiltModel built = modelLoader.build(girlAssets.getModel(), height,
+			girl.getBodyFraction(), weapon, kind.getWeaponKind());
 		if (built == null)
 		{
 			return;

@@ -16,11 +16,31 @@ public enum AnimeGirl
 {
 	ORIGINAL(null, 1f, false),
 	ESDEATH("esdeath", 1f, false),
-	RORY("rory", 0.747f, true);
+	RORY("rory", 0.747f, true),
+	GOHAN("v2/gohan", 1f, false),
+	GOKU("v2/goku", 1f, false),
+	HISOKA("v2/hisoka", 1f, false),
+	SAITAMA("v2/saitama", 1f, false),
+	SANJI("v2/sanji", 1f, false),
+	SHINJI("v2/shinji", 1f, false),
+	TATSUMAKI("v2/tatsumaki", 1f, false);
 
 	private final String resourceName;
 	private final float bodyFraction;
 	private final boolean ownWeapon;
+
+	@Override
+	public String toString()
+	{
+		if (this == ORIGINAL) { return "Original game thrall"; }
+		String name = name().toLowerCase(java.util.Locale.ROOT);
+		return Character.toUpperCase(name.charAt(0)) + name.substring(1);
+	}
+
+	String getAttributionResource()
+	{
+		return resourceName == null ? null : resourceName + ".attribution.txt";
+	}
 
 	String getModelResource()
 	{

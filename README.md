@@ -1,7 +1,14 @@
 # Anime Girl Thralls
 
 A RuneLite plugin that replaces the Arceuus thrall models (ghost, skeleton and zombie, all tiers)
-with a custom anime girl model. Currently ships with Esdeath and Rory Mercury.
+with a custom anime girl model.
+
+Seven additional characters are included: Gohan, Goku, Hisoka, Saitama, Sanji,
+Shinji and Tatsumaki. Each has idle, walk, melee, ranged and magic animations adapted
+from Esdeath's choreography, plus hand anchors for the configured weapons.
+Esdeath and Rory keep their original models and animations.
+
+See [model credits](ATTRIBUTIONS.md) and [animation details](ANIMATIONS.md).
 
 ## How it works
 
@@ -23,7 +30,7 @@ baked vertex animation: each clip stores every vertex position per keyframe and 
 interpolates between keyframes at draw time, writing the pose into the client's shared scratch model
 (`Client#applyTransformations` with no animations) so the model's bounds are recomputed each draw.
 
-Each girl has five clips, posed procedurally on her rig in Blender by `tools/export_girl.py` with
+The original two characters have five clips each, posed procedurally on her rig in Blender by `tools/export_girl.py` with
 per-girl poses from `tools/girl_poses.py`. Esdeath's:
 
 - `idle` (3 s loop): breathing, a slow look around, hair sway, forearms forward holding her weapon upright.
@@ -49,12 +56,13 @@ animate it, and moves each custom vertex by the weighted displacement of its nea
 Each thrall kind can hold an item from the game, configured by item id: a staff for ghost thralls
 (default Staff of water), a bow for skeleton thralls (default Magic shortbow) and optionally a melee
 weapon for zombie thralls. The item's inventory model is loaded from the game cache and merged into
-the girl's model when a replacement is built, then moved every draw to follow a hand. Girls modelled
+the girl's model when a replacement is built, then moved every draw to follow a hand. Characters modelled
 with their own weapon (Rory and her halberd) never get the configured item.
 
 Every clip stores a transform for each hand (`VertexClip` anchors): origin in the middle of the fist,
-x along the knuckle row (up when the thumb is up), y from wrist to knuckles, z = x cross y. The
-exporter derives these from the finger bones, so a new girl only needs a humanoid rig with fingers.
+x along the knuckle row (up when the thumb is up), y from wrist to knuckles, z = x cross y. The original
+exporter derives these from finger bones. The imported-rig exporter uses mapped palm joints, or the weighted hand surface for fixed fists.
+Supported fingers close around the handle and tighten during melee; grips still require in-game review.
 
 Items are aligned into that frame from their shape alone (`WeaponAlign`), so no per-item tuning is
 needed: the long axis from a principal axis fit goes along x, a bow's belly faces +y (string toward
@@ -139,12 +147,27 @@ models are not covered by that license. They are fan art of characters owned by 
 rights holders, bundled here for free, non-commercial use only. No endorsement by the rights
 holders is implied, and the plugin is not sold or monetised in any way.
 
-- Esdeath from *Akame ga Kill!* © Takahiro, Tetsuya Tashiro / SQUARE ENIX
+- Esdeath from *Akame ga Kill!* Ã‚Â© Takahiro, Tetsuya Tashiro / SQUARE ENIX
   ([Square Enix](https://www.square-enix.com/)); anime by White Fox.
-- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* © Takumi Yanai, AlphaPolis /
+- Rory Mercury from *GATE: Jieitai Kanochi nite, Kaku Tatakaeri* Ã‚Â© Takumi Yanai, AlphaPolis /
   GATE Production Committee ([AlphaPolis](https://www.alphapolis.co.jp/)); anime by A-1 Pictures.
 
 Rights holders who want a character removed can contact the repository owner directly through
 GitHub, and the content will be taken down promptly. GitHub's own
 [DMCA takedown process](https://docs.github.com/en/site-policy/content-removal-policies/dmca-takedown-policy)
 is also available for anything hosted in this repository.
+
+## Development preview
+
+Run `./gradlew runPreview`, or select **Thrall Model Preview** in IntelliJ. Log in and
+choose a character and animation to display beside your player without summoning a thrall.
+Height, rotation and repeating attacks help inspect the model. The preview is separate
+from both distributable JARs; weapon grips and NPC transitions need real thrall testing.
+Jagex accounts: [development login instructions](https://github.com/runelite/runelite/wiki/Using-Jagex-Accounts).
+
+Earlier draft builds offered experimental characters that are no longer in the dropdown.
+RuneLite resets an unavailable saved selection to the setting's default. No config keys changed.
+
+The seven imported models retain their individual CC BY licenses, separate from the code
+license and the original model notices above. Their creator/source credits and modification
+notes are in `ATTRIBUTIONS.md` and bundled alongside each resource.

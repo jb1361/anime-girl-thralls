@@ -1,0 +1,457 @@
+[
+  {
+    "character": "gohan",
+    "resource": "v2/gohan.json",
+    "author": {
+      "username": "keetos349",
+      "displayName": "Kari",
+      "profileUrl": "https://sketchfab.com/keetos349"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/gohan-43d67fb3ffed450ea6f22df8b87b72bb",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "506282d412d40c26b90f9fd1f8d97270912a11f762a040dd880c0751ebb789d2",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1912,
+        "bytes": 276684,
+        "sha256": "59a6fa6cf7a963dd8a9cd4bb8bd2f66253da6f281c5686b03f1ac086550a1d55",
+        "maxDisplacement": 32
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1912,
+        "bytes": 161404,
+        "sha256": "9066fdc2b68c6d50f539bdcbc259e555fa2cdfb23761991e1c71c1f90789bae8",
+        "maxDisplacement": 85
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1912,
+        "bytes": 138348,
+        "sha256": "db4c1961c492cbd4533ad7f919751b4b6a8aab588ae9ffc1736083fc7bf1a05a",
+        "maxDisplacement": 65
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1912,
+        "bytes": 195988,
+        "sha256": "c4026e0ca3416410e7a0e8bea74d3ce5699a9aace276a1cd173863aa84c60cb9",
+        "maxDisplacement": 71
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1912,
+        "bytes": 184460,
+        "sha256": "20cf69ee5f3cd16ecbedf883b306fc40b36367e679c2fdcc43684159d5242d6c",
+        "maxDisplacement": 91
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
+  },
+  {
+    "character": "goku",
+    "resource": "v2/goku.json",
+    "author": {
+      "username": "keetos349",
+      "displayName": "Kari",
+      "profileUrl": "https://sketchfab.com/keetos349"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/goku-rigged-animated-3ed060df9f4a4134963e61f3ca95ee7d",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "4e3108e22f559fc098b92696c7f788d560cdd25d05dd9477fcabb423f2356141",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1800,
+        "bytes": 260556,
+        "sha256": "f784cc165ceed71033f405eb108547c0199f2c6b50fc379d811e3521ff096df8",
+        "maxDisplacement": 31
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1800,
+        "bytes": 151996,
+        "sha256": "e177acee4846c9c0091e6e9eeb47964f16bf19748827c5204f3f71fdb0752ca6",
+        "maxDisplacement": 95
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1800,
+        "bytes": 130284,
+        "sha256": "7d9f61f112e2f75a3753a3154f9fd42836090eb2e06c51d83b7ac1bf0ec75cd8",
+        "maxDisplacement": 64
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1800,
+        "bytes": 184564,
+        "sha256": "b777c275f0f111ec5dd77ddbf73c2b041e8c746310f664a4e7348ec8b8e9f001",
+        "maxDisplacement": 73
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1800,
+        "bytes": 173708,
+        "sha256": "345861f86f5b7bd0e83632a6c180536bf6389b240cfcb4843fa1258e26b6fe4d",
+        "maxDisplacement": 87
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
+  },
+  {
+    "character": "hisoka",
+    "resource": "v2/hisoka.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/hisoka-hunter-x-hunter-f195e70261b14cc78835682eac2f63f4",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. The source has fixed fists; no finger deformation was added.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "611da93502637c6a60d81aad550df2be2f7fd5b4dbd62f293b80b51fd0e0854b",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3586,
+        "bytes": 517740,
+        "sha256": "79e73de5a414889bdc0b6f3052bbe413264b57877a9da75d3a095b6f0715ccb1",
+        "maxDisplacement": 22
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3586,
+        "bytes": 302020,
+        "sha256": "47189148f7f7b97d456deb0013536f1c63e017f23148f2c876ce1ba6bf52b9fd",
+        "maxDisplacement": 51
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3586,
+        "bytes": 258876,
+        "sha256": "1585bf0af3ca86ccc7ca60aeda7170e85a464023ea83fde700ff842221b74900",
+        "maxDisplacement": 54
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3586,
+        "bytes": 366736,
+        "sha256": "ceb9f4bcc642eb7985d552cfa75560e188bb1bd3cecbe220f1ef62e06a69cb3a",
+        "maxDisplacement": 51
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3586,
+        "bytes": 345164,
+        "sha256": "9de8467da7aa8c2400e2cf98a7f3a4a68ecbe8e1ab8c18fa4bc7d0607290c9ff",
+        "maxDisplacement": 66
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": false,
+    "hairAnimation": false
+  },
+  {
+    "character": "saitama",
+    "resource": "v2/saitama.json",
+    "author": {
+      "username": "D7Xtreme",
+      "displayName": "D7Xtreme",
+      "profileUrl": "https://sketchfab.com/D7Xtreme"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/saitama-one-punch-man-6512ce0a70e64ba4b55fdb5d042f1a4e",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. The source has fixed fists; no finger deformation was added.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.",
+    "sha256": "2fa47554b9996a4de69a38bfd983d7662c8065f89d65a0cfbd07617327b0142e",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 2666,
+        "bytes": 385260,
+        "sha256": "b0ba40f57f2fc398e44ab52d2d930254308da1616eb567327281934161bae5dd",
+        "maxDisplacement": 25
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 2666,
+        "bytes": 224740,
+        "sha256": "756319a6899fa19cefd61e0bb225ab19c2145daeeb5a94c9b8eaa31a15308f9d",
+        "maxDisplacement": 53
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 2666,
+        "bytes": 192636,
+        "sha256": "e63822277dcfeeb94e813f2607f7aadf000df8178cd0f857aafeb87f5406d3bb",
+        "maxDisplacement": 55
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 2666,
+        "bytes": 272896,
+        "sha256": "587e6df920bb3e88baee034bc0d8ab6d70e0a49d6a5085aeed9c075483f63df9",
+        "maxDisplacement": 58
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 2666,
+        "bytes": 256844,
+        "sha256": "3eb6f6f2f585cccf6fd77f3d68483c16214dca1f3bcbad2919365ea2749b9ff0",
+        "maxDisplacement": 74
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": false,
+    "hairAnimation": false
+  },
+  {
+    "character": "sanji",
+    "resource": "v2/sanji.json",
+    "author": {
+      "username": "josef3dartwork",
+      "displayName": "Josef",
+      "profileUrl": "https://sketchfab.com/josef3dartwork"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/sanji-anime-character-0262b397d2a14cf2b14d36e60a950cfd",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nBaked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.",
+    "sha256": "8acab01669c82a2f1ed1d1e778d117d59492d878051c68bd7e4884230c6b3f23",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3493,
+        "bytes": 504348,
+        "sha256": "a303b88cca44a8fd3b235e4509bbfdfa679ecbd216ffd3326e59650571de066b",
+        "maxDisplacement": 151
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3493,
+        "bytes": 294208,
+        "sha256": "c5c93a99c1e21466023687b8af466392b9e314834bdb3fda1a088543063f1d7d",
+        "maxDisplacement": 358
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3493,
+        "bytes": 252180,
+        "sha256": "c7340af08df6796b220cb448771bce2e46e1a841fd3e21a0b0df9d242fad7270",
+        "maxDisplacement": 331
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3493,
+        "bytes": 357250,
+        "sha256": "996c9c4a075e6e9c179821521f4e763ab95e80967e835fe5a839e45fde0fa74a",
+        "maxDisplacement": 307
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3493,
+        "bytes": 336236,
+        "sha256": "da0efd4bbd5883e631faf47284d16708a435edb7638be9c1e3dfb0b0d5ddaa27",
+        "maxDisplacement": 456
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
+  },
+  {
+    "character": "shinji",
+    "resource": "v2/shinji.json",
+    "author": {
+      "username": "ohhoni",
+      "displayName": "oni",
+      "profileUrl": "https://sketchfab.com/ohhoni"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/shinji-ikari-965f8891175a4699af04a957fc29582c",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required.  No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nBaked at fourfold coordinate precision; runtime height scaling preserves the requested in-game size.",
+    "sha256": "83fa6501f61ea59796328d7b5e8b75cebbf8f4e774ddf9f69fede860c478c773",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 3583,
+        "bytes": 517308,
+        "sha256": "e2fb90b7fceaa9ee9010ddbfab4ce39118c5ba6e0faaddd2b5eb2b8e5cbf1370",
+        "maxDisplacement": 144
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 3583,
+        "bytes": 301768,
+        "sha256": "0ceda5fa894de56a6a4dfa37c2ab73c3e17d3ce9db3524e1433e42cf89f9158d",
+        "maxDisplacement": 361
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 3583,
+        "bytes": 258660,
+        "sha256": "4eea49d6c5c12760d22aaa893a56b78155148bccee5faf2453a315e73b2ef6c6",
+        "maxDisplacement": 286
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 3583,
+        "bytes": 366430,
+        "sha256": "21a334b83d96f196db1c53ea139e6083c4bc38e75296d1fd33841a96c7eb377b",
+        "maxDisplacement": 293
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 3583,
+        "bytes": 344876,
+        "sha256": "2a89871336bb84d3107d797471cad73e7daba72fc199a9c7f48b0489a212366d",
+        "maxDisplacement": 411
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
+  },
+  {
+    "character": "tatsumaki",
+    "resource": "v2/tatsumaki.json",
+    "author": {
+      "username": "KelpieBoye",
+      "displayName": "KelpieBoye",
+      "profileUrl": "https://sketchfab.com/KelpieBoye"
+    },
+    "sourceUrl": "https://sketchfab.com/3d-models/lowpoly-tatsumaki-one-punch-man-850b5f85beec4941b3da2ebb729d9914",
+    "license": {
+      "uri": "https://api.sketchfab.com/v3/licenses/322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution",
+      "fullName": "Creative Commons Attribution",
+      "requirements": "Author must be credited. Commercial use is allowed.",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "slug": "by"
+    },
+    "changes": "Custom Anime Thralls: baked pose and transforms, normalized height and origin, sampled materials into vertex colors, welded vertices, removed degenerate triangles, and reduced geometry where required. No endorsement implied.\nThis model remains under its source CC BY license, separate from the plugin's BSD code.\n\nAnimation trial: retained source skin weights, mapped humanoid bones, exported procedural idle/walk/attack clips and joint-calibrated or weighted-surface hand anchors. Rebuilt matching vertex-colour geometry without pose-dependent welding.\nAdapted Esdeath pose timing and body choreography from girl_poses.py/export_girl.py to the mapped source rig. Added bounded finger closure and melee tightening on the mapped weighted finger chains.\nHair and cloth have no separately animated chains in this retained conversion. Tiny source triangles are preserved through animation quantization.\nRemoved the duplicate inverted green outline shell to expose the textured dress.",
+    "sha256": "e23bb022a53a84ce4a7b0a9faaea93e2f83b5bd0887b29a14bf3824cb8231a94",
+    "animations": [
+      {
+        "clip": "idle",
+        "frames": 24,
+        "vertices": 1139,
+        "bytes": 165372,
+        "sha256": "5450c476156edaeb45469ee95156a2ea6f15c19b44d334ec123a184785a0f01d",
+        "maxDisplacement": 30
+      },
+      {
+        "clip": "walk",
+        "frames": 14,
+        "vertices": 1139,
+        "bytes": 96472,
+        "sha256": "57735cb21615dfc5ede0d5d5ceddc5dcf564c4a44df6fdfa0d3d367868b76230",
+        "maxDisplacement": 86
+      },
+      {
+        "clip": "attack_melee",
+        "frames": 12,
+        "vertices": 1139,
+        "bytes": 82692,
+        "sha256": "b573144682173c374ff0ae4c6330239366264133213adfab7f1dd2cc71a7d849",
+        "maxDisplacement": 58
+      },
+      {
+        "clip": "attack_ranged",
+        "frames": 17,
+        "vertices": 1139,
+        "bytes": 117142,
+        "sha256": "06f7b781643f218bf33abb2af5a37fe140ada7595c49c702d094924123de6b91",
+        "maxDisplacement": 63
+      },
+      {
+        "clip": "attack_magic",
+        "frames": 16,
+        "vertices": 1139,
+        "bytes": 110252,
+        "sha256": "fb541287d090b5172d62fc89189e54893ba7bc729c80163aa8b14b4b8c79e434",
+        "maxDisplacement": 77
+      }
+    ],
+    "animationStyle": "Adapted Esdeath choreography",
+    "fingerAnimation": true,
+    "hairAnimation": false
+  }
+]
